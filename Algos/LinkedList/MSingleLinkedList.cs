@@ -144,7 +144,7 @@ namespace Algos.LinkedList
             }
 
             Node prev = null;
-            Node current = Head;
+            Node current = head;
             Node next;
 
             while (current != null)
@@ -174,9 +174,12 @@ namespace Algos.LinkedList
                 {
                     var temp = current.Next;
                     current.Next = current.Next.Next;
+                    continue;
                 }
-
-                current = current.Next;
+                else
+                {
+                    current = current.Next;
+                }
             }
         }
 
@@ -439,5 +442,126 @@ namespace Algos.LinkedList
             return prev;
         }
 
+        public int IsPalindromeUsingStack(Node node)
+        {
+            Stack<string> stack = new Stack<string>();
+            Node temp = node;
+
+            while (temp != null)
+            {
+                stack.Push(temp.Data);
+                temp = temp.Next;
+            }
+
+
+            while (node != null)
+            {
+                if (node.Data != stack.Pop())
+                {
+                    return -1;
+                }
+                node = node.Next;
+            }
+
+            return 1;
+        }
+
+        public int IsPalindromWithNoExtraSpace(Node node)
+        {
+            Node slow_Ptr = node;
+            Node fast_Ptr = node;
+            Node prev_Node_Of_slow_Ptr = node;
+            Node middleNode = null;
+            Node second_Half;
+
+            while (fast_Ptr != null && fast_Ptr.Next != null)
+            {
+                fast_Ptr = fast_Ptr.Next.Next;
+                prev_Node_Of_slow_Ptr = slow_Ptr;
+                slow_Ptr = slow_Ptr.Next;
+            }
+
+            if (fast_Ptr != null)
+            {
+                middleNode = slow_Ptr;
+                slow_Ptr = slow_Ptr.Next;
+            }
+
+            second_Half = slow_Ptr;
+            prev_Node_Of_slow_Ptr.Next = null;
+
+            var reverse = ReverseWithLoop(second_Half);
+            int flag = Compare(node, reverse);
+
+            var reverse1 = ReverseWithLoop(reverse);
+
+            if (middleNode != null)
+            {
+                prev_Node_Of_slow_Ptr.Next = middleNode;
+                middleNode.Next = reverse1;
+            }
+            else
+            {
+                prev_Node_Of_slow_Ptr.Next = reverse1;
+            }
+
+            return flag;
+        }
+
+        private int Compare(Node node1, Node node2)
+        {
+            while (node1 != null && node2 != null)
+            {
+                if (node1.Data == node2.Data)
+                {
+                    node1 = node1.Next;
+                    node2 = node2.Next;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+
+            return 1;
+        }
+
+        public Node RemoveAllDuplicateOccurances(Node head)
+        {
+            // 1>1>1>2>3
+            // https://www.geeksforgeeks.org/remove-occurrences-duplicates-sorted-linked-list/
+            Node dummy = new Node() { Data = "0" };
+            dummy.Next = head;
+            Node prev = dummy;
+            Node current = head;
+
+            while (current != null)
+            {
+                /* Until the current and previous values 
+                are same, keep updating current */
+                while (current.Next != null &&
+                    prev.Next.Data == current.Next.Data)
+                    current = current.Next;
+
+                /* if current has unique value i.e current 
+                    is not updated, Move the prev pointer 
+                    to next node*/
+                if (prev.Next == current)
+                    prev = prev.Next;
+
+                /* when current is updated to the last 
+                duplicate value of that segment, make 
+                prev the next of current*/
+                else
+                    prev.Next = current.Next;
+
+                current = current.Next;
+            }
+
+            /* update original head to the next of dummy 
+            node */
+            head = dummy.Next;
+            return head;
+        }
     }
 }
