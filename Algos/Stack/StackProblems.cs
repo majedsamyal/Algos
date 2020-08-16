@@ -137,5 +137,6 @@ namespace Algos.Stack
                 Console.Write(stack.Pop() +" ");
             }
         }
+
     }
 }
