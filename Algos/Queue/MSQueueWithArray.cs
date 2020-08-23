@@ -25,7 +25,7 @@ namespace Algos.Queue
         }
         public bool IsFull()
         {
-            return (rear == size - 1);
+            return ((rear + 1) % size == front);
         }
 
         public void Enqueue(int item)
@@ -43,9 +43,9 @@ namespace Algos.Queue
             }
             else
             {
-                rear = rear + 1;
+                rear = (rear + 1) % size;
                 arr[rear] = item;
-            }            
+            }
         }
 
         public int Dequeue()
@@ -58,8 +58,7 @@ namespace Algos.Queue
             else if (front == rear)
             {
                 int temp = arr[front];
-                front -= 1;
-                rear -= 1;
+                front = rear = -1;
                 return temp;
             }
             else
