@@ -9,12 +9,6 @@ namespace Algos.LinkedList
         #region Basic Operations
         public Node Head { get; set; }
 
-        public class Node
-        {
-            public string Data { get; set; }
-            public Node Next { get; set; }
-        }
-
         public void Add(string data)
         {
             Node newNode = new Node() { Data = data };
@@ -563,5 +557,11 @@ namespace Algos.LinkedList
             head = dummy.Next;
             return head;
         }
+    }
+
+    public class Node
+    {
+        public string Data { get; set; }
+        public Node Next { get; set; }
     }
 }
