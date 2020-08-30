@@ -64,7 +64,7 @@ namespace Algos.Queue
             else
             {
                 int temp = arr[front];
-                front += 1;
+                front = (front + 1) % size;
                 return temp;
             }
         }
