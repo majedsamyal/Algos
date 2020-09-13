@@ -5,4 +5,8 @@ As per my belief, if you know the internal working of a data structure, it helps
 ## Queue
 ## Tree
 ## Recursion
+## Array
+## Hash Table
+## Strings
 
+ 
