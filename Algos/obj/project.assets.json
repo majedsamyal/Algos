@@ -1,37 +1,41 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Majed\\.nuget\\packages\\": {}
+    "C:\\Users\\Majed_Samyal\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Projects\\Algos\\Algos\\Algos.csproj",
+      "projectUniqueName": "C:\\Users\\Majed_Samyal\\source\\repos\\Algos\\Algos\\Algos.csproj",
       "projectName": "Algos",
-      "projectPath": "G:\\Projects\\Algos\\Algos\\Algos.csproj",
-      "packagesPath": "C:\\Users\\Majed\\.nuget\\packages\\",
-      "outputPath": "G:\\Projects\\Algos\\Algos\\obj\\",
+      "projectPath": "C:\\Users\\Majed_Samyal\\source\\repos\\Algos\\Algos\\Algos.csproj",
+      "packagesPath": "C:\\Users\\Majed_Samyal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Majed_Samyal\\source\\repos\\Algos\\Algos\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Majed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Majed_Samyal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "netcoreapp3.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "netcoreapp3.0": {
           "projectReferences": {}
         }
       },
@@ -42,7 +46,7 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
+      "netcoreapp3.0": {
         "imports": [
           "net461",
           "net462",
@@ -58,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

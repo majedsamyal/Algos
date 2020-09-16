@@ -1,4 +1,5 @@
-﻿using Algos.LinkedList;
+﻿using Algos.Array;
+using Algos.LinkedList;
 using Algos.Recursion;
 using Algos.Stack;
 using Algos.Tree;
@@ -30,15 +31,15 @@ namespace Algos
             //SetMatrixZero.SetMatrixZeroFunc(new int[,] { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 }, { 1, 1, 1 } });
             //int counter = LargestNonNegativeSubArray.Length(new int[] { 2, 3, 4, -1, -2, 1, 5, 6, 3 });
             //int maxSum = LargestNonNegativeSubArray.Sum(new int[] { 10, -1, 2, 3, -4, 100 });
-            MSingleLinkedList lnk = new MSingleLinkedList();
-            lnk.Add("10");
-            lnk.Add("10");
-            lnk.Add("6");
-            lnk.Add("5");
-            lnk.Add("4");
-            lnk.Add("3");
-            lnk.Add("3");
-            lnk.Add("1");
+            //MSingleLinkedList lnk = new MSingleLinkedList();
+            //lnk.Add("10");
+            //lnk.Add("10");
+            //lnk.Add("6");
+            //lnk.Add("5");
+            //lnk.Add("4");
+            //lnk.Add("3");
+            //lnk.Add("3");
+            //lnk.Add("1");
             //var kthNode = lnk.FindKthNodeFromTail(3, lnk.Head);
             //var node5 = lnk.Search("5");
             //node5.Next = lnk.Search("3");
@@ -46,15 +47,15 @@ namespace Algos
             //var reverseLnk = lnk.Reverse(lnk.Head);
             //var newHead = lnk.ReverseWithLoop(lnk.Head);
             //lnk.RemoveDuplicates();
-            MSingleLinkedList lnkUnsorted = new MSingleLinkedList();
-            lnkUnsorted.Add("10");
-            lnkUnsorted.Add("1");
-            lnkUnsorted.Add("6");
-            lnkUnsorted.Add("5");
-            lnkUnsorted.Add("12");
-            lnkUnsorted.Add("3");
-            lnkUnsorted.Add("3");
-            lnkUnsorted.Add("1");
+            //MSingleLinkedList lnkUnsorted = new MSingleLinkedList();
+            //lnkUnsorted.Add("10");
+            //lnkUnsorted.Add("1");
+            //lnkUnsorted.Add("6");
+            //lnkUnsorted.Add("5");
+            //lnkUnsorted.Add("12");
+            //lnkUnsorted.Add("3");
+            //lnkUnsorted.Add("3");
+            //lnkUnsorted.Add("1");
             //lnkUnsorted.RemoveDuplicatesUnsorted();
 
             //MSingleLinkedList lnk1 = new MSingleLinkedList();
@@ -85,15 +86,15 @@ namespace Algos
 
             //var resultLnkList = lnk3.SumOfTwoLinkedList(lnk3.Head, lnk4.Head);
 
-            MSingleLinkedList lnk5 = new MSingleLinkedList();
-            lnk5.Add("3");
-            lnk5.Add("6");
-            lnk5.Add("5");
+            //MSingleLinkedList lnk5 = new MSingleLinkedList();
+            //lnk5.Add("3");
+            //lnk5.Add("6");
+            //lnk5.Add("5");
 
-            MSingleLinkedList lnk6 = new MSingleLinkedList();
-            lnk6.Add("2");
-            lnk6.Add("4");
-            lnk6.Add("8");
+            //MSingleLinkedList lnk6 = new MSingleLinkedList();
+            //lnk6.Add("2");
+            //lnk6.Add("4");
+            //lnk6.Add("8");
 
             //var res = lnk5.SumOfLinkedListSet2UsingStack(lnk5.Head, lnk6.Head);
 
@@ -130,22 +131,22 @@ namespace Algos
 
             #region Tree 
 
-            TreeNode t1 = new TreeNode("15");
-            t1.left = new TreeNode("10");
-            t1.right = new TreeNode("20");
-            t1.left.left = new TreeNode("8");
-            t1.left.right = new TreeNode("12");
-            t1.right.left = new TreeNode("16");
-            t1.right.right = new TreeNode("25");
+            //TreeNode t1 = new TreeNode("15");
+            //t1.left = new TreeNode("10");
+            //t1.right = new TreeNode("20");
+            //t1.left.left = new TreeNode("8");
+            //t1.left.right = new TreeNode("12");
+            //t1.right.left = new TreeNode("16");
+            //t1.right.right = new TreeNode("25");
 
-            TreeNode t2 = new TreeNode("15");
-            t2.left = new TreeNode("10");
-            t2.right = new TreeNode("20");
-            t2.left.left = new TreeNode("8");
-            t2.left.right = new TreeNode("12");
-            t2.right.left = new TreeNode("16");
-            t2.right.right = new TreeNode("25");
-            t2.right.right.left = new TreeNode("50");
+            //TreeNode t2 = new TreeNode("15");
+            //t2.left = new TreeNode("10");
+            //t2.right = new TreeNode("20");
+            //t2.left.left = new TreeNode("8");
+            //t2.left.right = new TreeNode("12");
+            //t2.right.left = new TreeNode("16");
+            //t2.right.right = new TreeNode("25");
+            //t2.right.right.left = new TreeNode("50");
 
             //TreeProblems.DFSPreOrder(t1);
             //TreeProblems.DFSPreOrderUsingRecursion(t1);
@@ -167,18 +168,23 @@ namespace Algos
             //RecursionHelper.PrintNumberDecreasing(10);
             //var output =  RecursionHelper.ReverseString("majed samyal");
             //Console.WriteLine(output);
-            Stack<int> stack = new Stack<int>();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            stack.Push(4);
-            stack.Push(5);
+            //Stack<int> stack = new Stack<int>();
+            //stack.Push(1);
+            //stack.Push(2);
+            //stack.Push(3);
+            //stack.Push(4);
+            //stack.Push(5);
             //var stackP = StackProblems.RemoveMidElement(stack, 5/2 + 1);
             //StackProblems.PrintStackInReverse(stack);
             //StackProblems.PrintStack(stack);
             //var result = StackProblems.EvaluatePostfixExpression("231*+9-");
             //var reverseString = StackProblems.ReverseStringUsingStack("majed");
-            StackProblems.ReverseWordsInString("Hello World");
+            //StackProblems.ReverseWordsInString("Hello World");
+            #endregion
+
+            #region Array 
+            ArraySubset arraySubset = new ArraySubset();
+            arraySubset.IsSubset(new int[] { 1, 2, 5, 3, 7, 11 }, new int[] { 3, 7, 1 });
             #endregion
         }
 
