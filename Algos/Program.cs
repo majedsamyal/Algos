@@ -183,8 +183,9 @@ namespace Algos
             #endregion
 
             #region Array 
-            ArraySubset arraySubset = new ArraySubset();
-            arraySubset.IsSubset(new int[] { 1, 2, 5, 3, 7, 11 }, new int[] { 3, 7, 1 });
+            //ArraySubset arraySubset = new ArraySubset();
+            //arraySubset.IsSubset(new int[] { 1, 2, 5, 3, 7, 11 }, new int[] { 3, 7, 1 });
+            int minCount = ArrayProblem.MinDeleteOpertions(new int[] { 4, 4, 3, 2, 1 });
             #endregion
         }
 
