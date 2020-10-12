@@ -8,10 +8,10 @@ namespace Algos.Array
     {
         // int[] arr = {4,4,3,2,1}
 
-        public static int MinDeleteOpertions(int[] arr)
+        public static int MinDeleteOpertionsUsingHash(int[] arr)
         {
             Dictionary<int, int> frequency = new Dictionary<int, int>();
-            
+
             // insert keys with frequency count
             foreach (var item in arr)
             {
@@ -33,6 +33,28 @@ namespace Algos.Array
             }
 
             return arr.Length - maxFreq;
+        }
+
+        public static void PrintArrayFrequency(int[] arr, int n)
+        {
+            //  { 2, 3, 3, 2, 5 }
+            // decreament all the elements in array by 1 
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = arr[i] - 1;
+            }
+
+            // use every element as an index of array 
+
+            for (int i = 0; i < n; i++)
+            {
+                arr[arr[i] % n] = arr[arr[i] % n] + n;
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(i + 1 + "-->" + arr[i] / n);
+            }
         }
     }
 }
