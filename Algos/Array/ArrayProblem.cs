@@ -56,5 +56,15 @@ namespace Algos.Array
                 Console.WriteLine(i + 1 + "-->" + arr[i] / n);
             }
         }
+
+        public static void PrintMostFrequentSortedArray(int[] arr)
+        {
+
+        }
+
+        public static void PrintMostFrequentUnSortedArrayWithHashing(int[] arr)
+        {
+
+        }
     }
 }
