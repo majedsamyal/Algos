@@ -1,4 +1,5 @@
 ﻿using Algos.Array;
+using Algos.Graph;
 using Algos.LinkedList;
 using Algos.Recursion;
 using Algos.Stack;
@@ -186,7 +187,22 @@ namespace Algos
             //ArraySubset arraySubset = new ArraySubset();
             //arraySubset.IsSubset(new int[] { 1, 2, 5, 3, 7, 11 }, new int[] { 3, 7, 1 });
             //int minCount = ArrayProblem.MinDeleteOpertionsUsingHash(new int[] { 4, 4, 3, 2, 1 });
-            ArrayProblem.PrintArrayFrequency(new int[] { 2, 3, 3, 2, 5 }, 5);
+            //ArrayProblem.PrintArrayFrequency(new int[] { 2, 3, 3, 2, 5 }, 5);
+            #endregion
+
+            #region Graph Problems 
+
+            GraphMS g = new GraphMS(4);
+            g.AddEdge(0, 1);
+            g.AddEdge(0, 2);
+            g.AddEdge(1, 2);
+            g.AddEdge(2, 0);
+            g.AddEdge(2, 3);
+            g.AddEdge(3, 3);
+
+            g.PrintDFS(2);
+            g.PrintBFS(2);
+
             #endregion
         }
 
