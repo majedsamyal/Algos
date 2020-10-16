@@ -192,17 +192,24 @@ namespace Algos
 
             #region Graph Problems 
 
-            GraphMS g = new GraphMS(4);
-            g.AddEdge(0, 1);
-            g.AddEdge(0, 2);
-            g.AddEdge(1, 2);
-            g.AddEdge(2, 0);
-            g.AddEdge(2, 3);
-            g.AddEdge(3, 3);
+            //GraphMS g = new GraphMS(4);
+            //g.AddEdge(0, 1);
+            //g.AddEdge(0, 2);
+            //g.AddEdge(1, 2);
+            //g.AddEdge(2, 0);
+            //g.AddEdge(2, 3);
+            //g.AddEdge(3, 3);
 
-            g.PrintDFS(2);
-            g.PrintBFS(2);
+            //g.PrintDFS(2);
+            //g.PrintBFS(2);
 
+            #endregion
+
+            #region Sorting 
+
+            Sorting.Sort sort = new Sorting.Sort();
+            var arrToSort = new int[] { 10, 80, 30, 90, 40, 50, 70 };
+            sort.QuickSort(arrToSort, 0, arrToSort.Length - 1);
             #endregion
         }
 
