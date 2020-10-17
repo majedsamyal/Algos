@@ -309,7 +309,7 @@ namespace Algos.Tree
             DeleteBinaryTree(root.left);
             DeleteBinaryTree(root.right);
             root = null;
-        }
+        }      
 
         #region Binary Tree
 
