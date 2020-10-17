@@ -209,7 +209,8 @@ namespace Algos
 
             Sorting.Sort sort = new Sorting.Sort();
             var arrToSort = new int[] { 10, 80, 30, 90, 40, 50, 70 };
-            sort.QuickSort(arrToSort, 0, arrToSort.Length - 1);
+            //sort.QuickSort(arrToSort, 0, arrToSort.Length - 1);
+            var res = sort.MergeSort(arrToSort);
             #endregion
         }
 
