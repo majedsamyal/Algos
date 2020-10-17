@@ -296,7 +296,7 @@ namespace Algos.Tree
 
             int left = HeightOfBinaryTree(root.left);
             int right = HeightOfBinaryTree(root.right);
-            return  1 + Math.Max(left, right);
+            return 1 + Math.Max(left, right);
         }
 
         public static void DeleteBinaryTree(TreeNode root)
@@ -309,7 +309,7 @@ namespace Algos.Tree
             DeleteBinaryTree(root.left);
             DeleteBinaryTree(root.right);
             root = null;
-        }      
+        }
 
         #region Binary Tree
 
@@ -398,6 +398,31 @@ namespace Algos.Tree
             // if we reach here, both binary trees are identical
             return true;
 
+        }
+
+        public static TreeNode Search(TreeNode node, string key)
+        {
+            if (node == null || node.key == key)
+                return node;
+
+            if (Convert.ToInt32(node.key) < Convert.ToInt32(key))
+            {
+                return Search(node.left, key);
+            }
+
+            return Search(node.right, key);
+        }
+
+        public static int MinValueInBST(TreeNode node)
+        {
+            TreeNode current = node;
+
+            while (current.left != null)
+            {
+                current = current.left;
+            }
+
+            return Convert.ToInt32(current.key);
         }
 
         #endregion
