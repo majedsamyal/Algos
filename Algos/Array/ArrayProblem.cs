@@ -66,5 +66,28 @@ namespace Algos.Array
         {
 
         }
+
+        public static int MaxSubArraySum(int[] arr)
+        {
+            int max_Sum = int.MinValue;
+            int max_ending_here = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                max_ending_here = max_ending_here + arr[i];
+
+                if (max_Sum < max_ending_here)
+                {
+                    max_Sum = max_ending_here;
+                }
+
+                if (max_ending_here < 0)
+                {
+                    max_ending_here = 0;
+                }
+            }
+
+            return max_Sum;
+        }
     }
 }

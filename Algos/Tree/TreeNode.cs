@@ -425,6 +425,55 @@ namespace Algos.Tree
             return Convert.ToInt32(current.key);
         }
 
+        public static TreeNode LCABinaryTree(TreeNode root, TreeNode node1, TreeNode node2)
+        {
+            // Base Case
+            if (root == null)
+            {
+                return null;
+            }
+
+            if (root.key == node1.key || root.key == node2.key)
+            {
+                return root;
+            }
+
+            var leftroot = LCABinaryTree(root.left, node1, node2);
+            var rightroot = LCABinaryTree(root.right, node1, node2);
+
+            if (leftroot != null && rightroot != null)
+            {
+                return root;
+            }
+            else if (leftroot != null)
+            {
+                return leftroot;
+            }
+            else
+            {
+                return rightroot;
+            }
+        }
+
+        public static TreeNode LCABinarySearchTree(TreeNode root, TreeNode node1, TreeNode node2)
+        {
+            if (root == null)
+            {
+                return null;
+            }
+
+            if (Convert.ToInt32(node1.key) < Convert.ToInt32(root.key) && Convert.ToInt32(node2.key) < Convert.ToInt32(root.key))
+            {
+                LCABinarySearchTree(root.left, node1, node2);
+            }
+            else if (Convert.ToInt32(node1.key) > Convert.ToInt32(root.key) && Convert.ToInt32(node2.key) > Convert.ToInt32(root.key))
+            {
+                LCABinarySearchTree(root.right, node1, node2);
+            }
+
+            return root;
+        }
+
         #endregion
     }
 
