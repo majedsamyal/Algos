@@ -188,6 +188,7 @@ namespace Algos
             //arraySubset.IsSubset(new int[] { 1, 2, 5, 3, 7, 11 }, new int[] { 3, 7, 1 });
             //int minCount = ArrayProblem.MinDeleteOpertionsUsingHash(new int[] { 4, 4, 3, 2, 1 });
             //ArrayProblem.PrintArrayFrequency(new int[] { 2, 3, 3, 2, 5 }, 5);
+            int sum = ArrayProblem.MaxSubArraySum(new int[] { -2, -3, 4, -1, -2, 1, 5, -3 });
             #endregion
 
             #region Graph Problems 
@@ -207,10 +208,10 @@ namespace Algos
 
             #region Sorting 
 
-            Sorting.Sort sort = new Sorting.Sort();
-            var arrToSort = new int[] { 10, 80, 30, 90, 40, 50, 70 };
-            //sort.QuickSort(arrToSort, 0, arrToSort.Length - 1);
-            var res = sort.MergeSort(arrToSort);
+            //Sorting.Sort sort = new Sorting.Sort();
+            //var arrToSort = new int[] { 10, 80, 30, 90, 40, 50, 70 };
+            ////sort.QuickSort(arrToSort, 0, arrToSort.Length - 1);
+            //var res = sort.MergeSort(arrToSort);
             #endregion
         }
 
