@@ -188,7 +188,8 @@ namespace Algos
             //arraySubset.IsSubset(new int[] { 1, 2, 5, 3, 7, 11 }, new int[] { 3, 7, 1 });
             //int minCount = ArrayProblem.MinDeleteOpertionsUsingHash(new int[] { 4, 4, 3, 2, 1 });
             //ArrayProblem.PrintArrayFrequency(new int[] { 2, 3, 3, 2, 5 }, 5);
-            int sum = ArrayProblem.MaxSubArraySum(new int[] { -2, -3, 4, -1, -2, 1, 5, -3 });
+            //int sum = ArrayProblem.MaxSubArraySum(new int[] { -2, -3, 4, -1, -2, 1, 5, -3 });
+            var sort = ArrayProblem.Segregate012InArray(new int[] { 0, 1, 0, 2, 1 });
             #endregion
 
             #region Graph Problems 
