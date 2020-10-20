@@ -89,5 +89,38 @@ namespace Algos.Array
 
             return max_Sum;
         }
+
+        public static int[] Segregate012InArray(int[] arr)
+        {
+            int low = 0, mid = 0, high = arr.Length - 1;
+
+            while (mid <= high)
+            {
+                switch (arr[mid])
+                {
+                    case 0:
+                        //swap low, mid
+                        var temp = arr[low];
+                        arr[low] = arr[mid];
+                        arr[mid] = temp;
+                        low++;
+                        mid++;
+                        break;
+                    case 1:
+                        mid++;
+                        break;
+                    case 2:
+                        // swap high, mid
+                        var temp1 = arr[high];
+                        arr[high] = arr[mid];
+                        arr[mid] = temp1;
+                        mid++;
+                        high--;
+                        break;
+                }
+            }
+
+            return arr;
+        }
     }
 }
