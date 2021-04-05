@@ -3,6 +3,7 @@ using Algos.Graph;
 using Algos.LinkedList;
 using Algos.Recursion;
 using Algos.Stack;
+using Algos.String;
 using Algos.Tree;
 using System;
 using System.Collections.Generic;
@@ -189,7 +190,7 @@ namespace Algos
             //int minCount = ArrayProblem.MinDeleteOpertionsUsingHash(new int[] { 4, 4, 3, 2, 1 });
             //ArrayProblem.PrintArrayFrequency(new int[] { 2, 3, 3, 2, 5 }, 5);
             //int sum = ArrayProblem.MaxSubArraySum(new int[] { -2, -3, 4, -1, -2, 1, 5, -3 });
-            var sort = ArrayProblem.Segregate012InArray(new int[] { 0, 1, 0, 2, 1 });
+            //var sort = ArrayProblem.Segregate012InArray(new int[] { 0, 1, 0, 2, 1 });
             #endregion
 
             #region Graph Problems 
@@ -213,6 +214,11 @@ namespace Algos
             //var arrToSort = new int[] { 10, 80, 30, 90, 40, 50, 70 };
             ////sort.QuickSort(arrToSort, 0, arrToSort.Length - 1);
             //var res = sort.MergeSort(arrToSort);
+            #endregion
+
+            #region String
+            //var isAnagram = StringProblem.AnagramMethod1("listen", "silent");
+            var isAnagram = StringProblem.AnagramMehtod2("listen", "silent");
             #endregion
         }
 
