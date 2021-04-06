@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Algos.String
@@ -76,6 +77,61 @@ namespace Algos.String
             }
 
             return true;
+        }
+
+        public static string ReverseWordUsingSwap(string sentence)
+        {
+            // i like this program very much
+            // much very program this like i
+            string[] arr = sentence.ToCharArray().Select(c => c.ToString()).ToArray();
+
+            return "";
+        }
+
+        /// <summary>
+        /// Reverse all the words first, and then reverse the complete string
+        /// Time Complexcity: O(N)
+        /// Space Complexcity: O(1)
+        /// </summary>
+        /// <param name="sentence"></param>
+        /// <returns></returns>
+        public static string ReverseWord(string sentence)
+        {
+            // i like this program very much
+            // much very program this like i
+            var arr = sentence.ToCharArray();
+
+            int start = 0;
+            for (int end = 0; end < arr.Length; end++)
+            {
+                if (arr[end] == ' ')
+                {
+                    ReverseLetters(arr, start, end-1);
+                    start = end + 1;
+                }
+            }
+
+            // reverse last word
+            ReverseLetters(arr, start, arr.Length - 1);
+
+            ReverseLetters(arr, 0, arr.Length - 1);
+
+            return new string(arr);
+        }
+
+        private static void ReverseLetters(char[] str, int start, int end)
+        {
+            // majed
+            // dejam
+            char temp;
+            while (start <= end)
+            {
+                temp = str[start];
+                str[start] = str[end];
+                str[end] = temp;
+                start++;
+                end--;
+            }
         }
     }
 }

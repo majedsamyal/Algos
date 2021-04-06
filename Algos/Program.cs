@@ -218,7 +218,8 @@ namespace Algos
 
             #region String
             //var isAnagram = StringProblem.AnagramMethod1("listen", "silent");
-            var isAnagram = StringProblem.AnagramMehtod2("listen", "silent");
+            //var isAnagram = StringProblem.AnagramMehtod2("listen", "silent");
+            var reverse = StringProblem.ReverseWord("i like this program very much");
             #endregion
         }
 
