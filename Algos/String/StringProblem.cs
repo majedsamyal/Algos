@@ -146,5 +146,40 @@ namespace Algos.String
                 end--;
             }
         }
+
+
+        /// <summary>
+        /// Store words in Disctionay with their count
+        /// Time Complexcity: O(N), in best case it's O(N) to O(M), where M is the index of duplicate word
+        /// Space Complexcity: O(N), as we are using Dictionay to store the occurance 
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static string FirstDuplicateWord(string[] arr)
+        {
+            // Ravi had been saying that he had been there
+            string result = "No Repetition";
+
+            Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(arr[i]))
+                {
+                    int count = keyValuePairs[arr[i]];
+                    keyValuePairs[arr[i]] = count++;
+                    if (count > 1)
+                    {
+                        return arr[i];
+                    }
+                }
+                else
+                {
+                    keyValuePairs.Add(arr[i], 1);
+                }
+            }
+
+            return result;
+        }
     }
 }

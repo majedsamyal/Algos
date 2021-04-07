@@ -220,8 +220,9 @@ namespace Algos
             //var isAnagram = StringProblem.AnagramMethod1("listen", "silent");
             //var isAnagram = StringProblem.AnagramMehtod2("listen", "silent");
             //var reverse = StringProblem.ReverseWord("i like this program very much");
-            string[] words = {"i","like","this","program","very","much"};
-            var reverse = StringProblem.ReverseWordUsingSwap(words);
+            string[] words = { "i", "like", "this", "this", "program", "very", "much" };
+            //var reverse = StringProblem.ReverseWordUsingSwap(words);
+            var duplicateWord = StringProblem.FirstDuplicateWord(words);
             #endregion
         }
 
