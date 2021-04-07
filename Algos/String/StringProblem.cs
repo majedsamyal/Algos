@@ -79,13 +79,26 @@ namespace Algos.String
             return true;
         }
 
-        public static string ReverseWordUsingSwap(string sentence)
+        /// <summary>
+        /// Swap string array, assuming the parameter will be an array of strings
+        /// Time Complexicity: O(n), loop array to swap
+        /// Space Complexcity: O(1)
+        /// </summary>
+        /// <param name="sentenceArray"></param>
+        /// <returns></returns>
+        public static string ReverseWordUsingSwap(string[] sentenceArray)
         {
             // i like this program very much
-            // much very program this like i
-            string[] arr = sentence.ToCharArray().Select(c => c.ToString()).ToArray();
+            // much very program this like i   
 
-            return "";
+            for (int i = 0; i < sentenceArray.Length / 2; i++)
+            {
+                var temp = sentenceArray[i];
+                sentenceArray[i] = sentenceArray[sentenceArray.Length - 1 - i];
+                sentenceArray[sentenceArray.Length - 1 - i] = temp;
+            }
+
+            return string.Join(" ", sentenceArray);
         }
 
         /// <summary>
@@ -106,7 +119,7 @@ namespace Algos.String
             {
                 if (arr[end] == ' ')
                 {
-                    ReverseLetters(arr, start, end-1);
+                    ReverseLetters(arr, start, end - 1);
                     start = end + 1;
                 }
             }
