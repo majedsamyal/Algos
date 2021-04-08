@@ -146,5 +146,111 @@ namespace Algos.String
                 end--;
             }
         }
+
+
+        /// <summary>
+        /// Store words in Disctionay with their count
+        /// Time Complexcity: O(N), in best case it's O(N) to O(M), where M is the index of duplicate word
+        /// Space Complexcity: O(N), as we are using Dictionay to store the occurance 
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static string FirstDuplicateWord(string[] arr)
+        {
+            // Ravi had been saying that he had been there
+            string result = "No Repetition";
+
+            Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(arr[i]))
+                {
+                    int count = keyValuePairs[arr[i]];
+                    keyValuePairs[arr[i]] = count++;
+                    if (count > 1)
+                    {
+                        return arr[i];
+                    }
+                }
+                else
+                {
+                    keyValuePairs.Add(arr[i], 1);
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Find middle and do the comparison
+        /// Time Complexcity: O(N)
+        /// Space Complexcity: O(1)
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static bool IsPalimdrome(string str)
+        {
+            //Kayak
+
+            for (int i = 0; i < str.Length / 2; i++)
+            {
+                if (str[i] != str[str.Length - 1 - i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Subtract or Add int 32 
+        /// Time Complexcity: O(N)
+        /// Space Complexcity: O(1)
+        /// </summary>
+        /// <param name="str"></param>
+        public static void ConvertCase(StringBuilder str)
+        {
+            int ln = str.Length;
+            for (int i = 0; i < ln; i++)
+            {
+                if (str[i] >= 'a' && str[i] <= 'z')
+                {
+                    str[i] = (char)(str[i] - 32);
+                }
+                else if (str[i] >= 'A' && str[i] <= 'Z')
+                {
+                    str[i] = (char)(str[i] + 32);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Remove using Brute Force
+        /// Time Complexcity: O(N ^2), using two loops
+        /// Space Complexcity: O(1)
+        /// </summary>
+        /// <param name="str"></param>
+        public static void RemoveDuplicateCharBruteForce(StringBuilder str)
+        {
+            //majeeed
+           
+            for (int i = 0; i < str.Length; i++)
+            {
+                for (int j = i + 1; j < str.Length; j++)
+                {
+                    if (j > str.Length - 1)
+                    {
+                        break;                       
+                    }
+                    if (str[i] == str[j])
+                    {                        
+                        str.Remove(j, 1);
+                        j--;
+                    }
+                }
+            }           
+        }
     }
 }

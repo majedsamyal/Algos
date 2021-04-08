@@ -7,6 +7,7 @@ using Algos.String;
 using Algos.Tree;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Algos
 {
@@ -220,8 +221,13 @@ namespace Algos
             //var isAnagram = StringProblem.AnagramMethod1("listen", "silent");
             //var isAnagram = StringProblem.AnagramMehtod2("listen", "silent");
             //var reverse = StringProblem.ReverseWord("i like this program very much");
-            string[] words = {"i","like","this","program","very","much"};
-            var reverse = StringProblem.ReverseWordUsingSwap(words);
+            //string[] words = { "i", "like", "this", "this", "program", "very", "much" };
+            //var reverse = StringProblem.ReverseWordUsingSwap(words);
+            //var duplicateWord = StringProblem.FirstDuplicateWord(words);
+            //var isPalimdrome = StringProblem.IsPalimdrome("kayak");
+            StringBuilder builder = new StringBuilder("geeksforgeeks");
+            //StringProblem.ConvertCase(builder);
+            StringProblem.RemoveDuplicateCharBruteForce(builder);
             #endregion
         }
 
