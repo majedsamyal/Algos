@@ -182,6 +182,13 @@ namespace Algos.String
             return result;
         }
 
+        /// <summary>
+        /// Find middle and do the comparison
+        /// Time Complexcity: O(N)
+        /// Space Complexcity: O(1)
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static bool IsPalimdrome(string str)
         {
             //Kayak
@@ -197,6 +204,12 @@ namespace Algos.String
             return true;
         }
 
+        /// <summary>
+        /// Subtract or Add int 32 
+        /// Time Complexcity: O(N)
+        /// Space Complexcity: O(1)
+        /// </summary>
+        /// <param name="str"></param>
         public static void ConvertCase(StringBuilder str)
         {
             int ln = str.Length;
@@ -211,6 +224,33 @@ namespace Algos.String
                     str[i] = (char)(str[i] + 32);
                 }
             }
+        }
+
+        /// <summary>
+        /// Remove using Brute Force
+        /// Time Complexcity: O(N ^2), using two loops
+        /// Space Complexcity: O(1)
+        /// </summary>
+        /// <param name="str"></param>
+        public static void RemoveDuplicateCharBruteForce(StringBuilder str)
+        {
+            //majeeed
+           
+            for (int i = 0; i < str.Length; i++)
+            {
+                for (int j = i + 1; j < str.Length; j++)
+                {
+                    if (j > str.Length - 1)
+                    {
+                        break;                       
+                    }
+                    if (str[i] == str[j])
+                    {                        
+                        str.Remove(j, 1);
+                        j--;
+                    }
+                }
+            }           
         }
     }
 }
