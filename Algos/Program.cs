@@ -225,9 +225,9 @@ namespace Algos
             //var reverse = StringProblem.ReverseWordUsingSwap(words);
             //var duplicateWord = StringProblem.FirstDuplicateWord(words);
             //var isPalimdrome = StringProblem.IsPalimdrome("kayak");
-            StringBuilder builder = new StringBuilder("mmajeeed");
+            StringBuilder builder = new StringBuilder("geeksforgeeks");
             //StringProblem.ConvertCase(builder);
-            StringProblem.RemoveDuplicateChar(builder);
+            StringProblem.RemoveDuplicateCharBruteForce(builder);
             #endregion
         }
 
