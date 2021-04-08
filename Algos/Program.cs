@@ -7,6 +7,7 @@ using Algos.String;
 using Algos.Tree;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Algos
 {
@@ -223,7 +224,9 @@ namespace Algos
             //string[] words = { "i", "like", "this", "this", "program", "very", "much" };
             //var reverse = StringProblem.ReverseWordUsingSwap(words);
             //var duplicateWord = StringProblem.FirstDuplicateWord(words);
-            var isPalimdrome = StringProblem.IsPalimdrome("kayak");
+            //var isPalimdrome = StringProblem.IsPalimdrome("kayak");
+            StringBuilder builder = new StringBuilder("Majed");
+            StringProblem.ConvertCase(builder);
             #endregion
         }
 
