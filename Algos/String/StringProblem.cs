@@ -253,6 +253,12 @@ namespace Algos.String
             }
         }
 
+        /// <summary>
+        /// Add key into Dictionary and then if key found remove the occurance from origional string
+        /// Time Complexcity:O(N)
+        /// Space Complexcity:O(N)
+        /// </summary>
+        /// <param name="str"></param>
         public static void RemoveDuplicateCharUsingHashing(StringBuilder str)
         {
             //geeksforgeeks
@@ -271,6 +277,50 @@ namespace Algos.String
                     keyValuePairs.Add(str[i], str[i]);
                 }
             }
+        }
+
+        /// <summary>
+        /// Store words count in Disctionary and then find the next most repeated word count
+        /// Time Complexcity:O(N)
+        /// Space Complexcity:O(N), using Dictionary to store
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static string SecondMostRepeatedWord(string[] arr)
+        {
+            //["aaa", "bbb", "ccc", "bbb",  "aaa", "aaa"]
+
+            Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(arr[i]))
+                {
+                    keyValuePairs[arr[i]] = keyValuePairs[arr[i]] + 1;
+                }
+                else
+                {
+                    keyValuePairs.Add(arr[i], 1);
+                }
+            }
+
+            string result = string.Empty;
+            int first = 0;
+            int second = -1;
+            foreach (var item in keyValuePairs)
+            {
+                var value = item.Value;
+                if (value > first)
+                {
+                    first = value;
+                }
+                if (value < first && value > second)
+                {
+                    second = value;
+                    result = item.Key;
+                }
+            }
+            return result;
         }
     }
 }
