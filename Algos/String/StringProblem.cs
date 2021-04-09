@@ -235,22 +235,92 @@ namespace Algos.String
         public static void RemoveDuplicateCharBruteForce(StringBuilder str)
         {
             //majeeed
-           
+
             for (int i = 0; i < str.Length; i++)
             {
                 for (int j = i + 1; j < str.Length; j++)
                 {
                     if (j > str.Length - 1)
                     {
-                        break;                       
+                        break;
                     }
                     if (str[i] == str[j])
-                    {                        
+                    {
                         str.Remove(j, 1);
                         j--;
                     }
                 }
-            }           
+            }
+        }
+
+        /// <summary>
+        /// Add key into Dictionary and then if key found remove the occurance from origional string
+        /// Time Complexcity:O(N)
+        /// Space Complexcity:O(N)
+        /// </summary>
+        /// <param name="str"></param>
+        public static void RemoveDuplicateCharUsingHashing(StringBuilder str)
+        {
+            //geeksforgeeks
+
+            Dictionary<char, char> keyValuePairs = new Dictionary<char, char>();
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(str[i]))
+                {
+                    str.Remove(i, 1);
+                    i--;
+                }
+                else
+                {
+                    keyValuePairs.Add(str[i], str[i]);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Store words count in Disctionary and then find the next most repeated word count
+        /// Time Complexcity:O(N)
+        /// Space Complexcity:O(N), using Dictionary to store
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static string SecondMostRepeatedWord(string[] arr)
+        {
+            //["aaa", "bbb", "ccc", "bbb",  "aaa", "aaa"]
+
+            Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(arr[i]))
+                {
+                    keyValuePairs[arr[i]] = keyValuePairs[arr[i]] + 1;
+                }
+                else
+                {
+                    keyValuePairs.Add(arr[i], 1);
+                }
+            }
+
+            string result = string.Empty;
+            int first = 0;
+            int second = -1;
+            foreach (var item in keyValuePairs)
+            {
+                var value = item.Value;
+                if (value > first)
+                {
+                    first = value;
+                }
+                if (value < first && value > second)
+                {
+                    second = value;
+                    result = item.Key;
+                }
+            }
+            return result;
         }
     }
 }

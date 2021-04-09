@@ -227,7 +227,10 @@ namespace Algos
             //var isPalimdrome = StringProblem.IsPalimdrome("kayak");
             StringBuilder builder = new StringBuilder("geeksforgeeks");
             //StringProblem.ConvertCase(builder);
-            StringProblem.RemoveDuplicateCharBruteForce(builder);
+            //StringProblem.RemoveDuplicateCharUsingHashing(builder);
+            // expected geksfor
+            string[] words = { "aaa", "bbb", "ccc", "bbb", "aaa", "aaa" };
+            var secondMostRepeatedWord = StringProblem.SecondMostRepeatedWord(words);
             #endregion
         }
 
