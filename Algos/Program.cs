@@ -227,7 +227,8 @@ namespace Algos
             //var isPalimdrome = StringProblem.IsPalimdrome("kayak");
             StringBuilder builder = new StringBuilder("geeksforgeeks");
             //StringProblem.ConvertCase(builder);
-            StringProblem.RemoveDuplicateCharBruteForce(builder);
+            StringProblem.RemoveDuplicateCharUsingHashing(builder);
+            // expected geksfor
             #endregion
         }
 

@@ -235,22 +235,42 @@ namespace Algos.String
         public static void RemoveDuplicateCharBruteForce(StringBuilder str)
         {
             //majeeed
-           
+
             for (int i = 0; i < str.Length; i++)
             {
                 for (int j = i + 1; j < str.Length; j++)
                 {
                     if (j > str.Length - 1)
                     {
-                        break;                       
+                        break;
                     }
                     if (str[i] == str[j])
-                    {                        
+                    {
                         str.Remove(j, 1);
                         j--;
                     }
                 }
-            }           
+            }
+        }
+
+        public static void RemoveDuplicateCharUsingHashing(StringBuilder str)
+        {
+            //geeksforgeeks
+
+            Dictionary<char, char> keyValuePairs = new Dictionary<char, char>();
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(str[i]))
+                {
+                    str.Remove(i, 1);
+                    i--;
+                }
+                else
+                {
+                    keyValuePairs.Add(str[i], str[i]);
+                }
+            }
         }
     }
 }
