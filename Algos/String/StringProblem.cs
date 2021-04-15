@@ -322,5 +322,54 @@ namespace Algos.String
             }
             return result;
         }
+
+        /// <summary>
+        /// Traverse the string, if current char is a space, remove and shift all char by -1 position. Using inbuilt C# method to remove and shift
+        /// Time Complexcity: O(N^2), traverse string and shift chars
+        /// Space Complexcity: O(1)
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string RemoveSpacesBruteForce(StringBuilder str)
+        {
+            // input: "g  eeks   for ge  eeks  "
+
+            int counter = 0;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                counter++;
+                if (str[i] == ' ')
+                {
+                    str.Remove(i, 1);
+                    i--;
+                }
+            }
+
+            return str.ToString();
+        }
+
+        /// <summary>
+        /// Traverse the string, if current char is not a space, move that char to the start of string by maintaining one counter
+        /// Time Complexcity:O(N), as we only do string traverse
+        /// Space Complexcity:O(1)
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string RemoveSpacesBetterApproach(StringBuilder str)
+        {
+            // input: "g  eeks   for ge  eeks  "
+
+            int count = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != ' ')
+                {
+                    str[count++] = str[i];
+                }
+            }
+
+            return str.ToString().Substring(0, count);
+        }
     }
 }
