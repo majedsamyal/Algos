@@ -225,12 +225,14 @@ namespace Algos
             //var reverse = StringProblem.ReverseWordUsingSwap(words);
             //var duplicateWord = StringProblem.FirstDuplicateWord(words);
             //var isPalimdrome = StringProblem.IsPalimdrome("kayak");
-            StringBuilder builder = new StringBuilder("geeksforgeeks");
+
             //StringProblem.ConvertCase(builder);
             //StringProblem.RemoveDuplicateCharUsingHashing(builder);
             // expected geksfor
-            string[] words = { "aaa", "bbb", "ccc", "bbb", "aaa", "aaa" };
-            var secondMostRepeatedWord = StringProblem.SecondMostRepeatedWord(words);
+            //string[] words = { "aaa", "bbb", "ccc", "bbb", "aaa", "aaa" };
+            //var secondMostRepeatedWord = StringProblem.SecondMostRepeatedWord(words);
+            StringBuilder builder = new StringBuilder("g  eeks   for ge  eeks  ");
+            var removeSpaces = StringProblem.RemoveSpacesBetterApproach(builder);
             #endregion
         }
 
