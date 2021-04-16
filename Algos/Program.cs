@@ -231,8 +231,9 @@ namespace Algos
             // expected geksfor
             //string[] words = { "aaa", "bbb", "ccc", "bbb", "aaa", "aaa" };
             //var secondMostRepeatedWord = StringProblem.SecondMostRepeatedWord(words);
-            StringBuilder builder = new StringBuilder("g  eeks   for ge  eeks  ");
-            var removeSpaces = StringProblem.RemoveSpacesBetterApproach(builder);
+            StringBuilder builder = new StringBuilder("geeksforgeeks");
+            //var removeSpaces = StringProblem.RemoveSpacesBetterApproach(builder);
+            var firstNonRepeativeChar = StringProblem.FirstNonRepeativeCharSignleTraverse(builder);
             #endregion
         }
 

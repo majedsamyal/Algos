@@ -371,5 +371,70 @@ namespace Algos.String
 
             return str.ToString().Substring(0, count);
         }
+
+        public class Value
+        {
+            public int Count { get; set; }
+            public int Index { get; set; }
+        }
+        /// <summary>
+        /// Traverse the string and store index and count in dictionary, then at last traverse the dictionary and find the desired result
+        /// Time Complexcity:O(N)
+        /// Space Comlexcity:O(N), using Dictionary to save frequencies
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string FirstNonRepeativeCharSignleTraverse(StringBuilder str)
+        {
+            int charCount = 256;
+            Dictionary<char, Value> keyValuePairs = new Dictionary<char, Value>(charCount);
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (keyValuePairs.ContainsKey(str[i]))
+                {
+                    keyValuePairs[str[i]].Count++;
+                }
+                else
+                {
+                    keyValuePairs.Add(str[i], new Value() { Count = 1, Index = i });
+                }
+            }
+
+            // traverse the dictionary
+            // find minimum count with minimum index
+
+            int index = int.MaxValue;
+            int count = int.MaxValue;            
+
+            foreach (var item in keyValuePairs)
+            {
+                if (item.Value.Count <= count)
+                {
+                    if (count == item.Value.Count)
+                    {
+                        if (item.Value.Index < index)
+                        {
+                            index = item.Value.Index;
+                        }
+                    }
+                    else
+                    {
+                        count = item.Value.Count;
+                        index = item.Value.Index;
+                    }
+                }
+            }
+
+            if (count == 1)
+            {
+                return str[index].ToString();
+            }
+            else
+            {
+                return "no single occurance found";
+            }
+            
+        }
     }
 }
