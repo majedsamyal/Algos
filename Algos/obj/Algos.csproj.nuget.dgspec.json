@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Projects\\Algos\\Algos\\Algos.csproj": {}
+    "C:\\Users\\Majed_Samyal\\source\\repos\\Algos\\Algos\\Algos.csproj": {}
   },
   "projects": {
-    "G:\\Projects\\Algos\\Algos\\Algos.csproj": {
+    "C:\\Users\\Majed_Samyal\\source\\repos\\Algos\\Algos\\Algos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Projects\\Algos\\Algos\\Algos.csproj",
+        "projectUniqueName": "C:\\Users\\Majed_Samyal\\source\\repos\\Algos\\Algos\\Algos.csproj",
         "projectName": "Algos",
-        "projectPath": "G:\\Projects\\Algos\\Algos\\Algos.csproj",
-        "packagesPath": "C:\\Users\\Majed\\.nuget\\packages\\",
-        "outputPath": "G:\\Projects\\Algos\\Algos\\obj\\",
+        "projectPath": "C:\\Users\\Majed_Samyal\\source\\repos\\Algos\\Algos\\Algos.csproj",
+        "packagesPath": "C:\\Users\\Majed_Samyal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Majed_Samyal\\source\\repos\\Algos\\Algos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Majed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Majed_Samyal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +29,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +41,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -52,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
