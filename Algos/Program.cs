@@ -192,6 +192,10 @@ namespace Algos
             //ArrayProblem.PrintArrayFrequency(new int[] { 2, 3, 3, 2, 5 }, 5);
             //int sum = ArrayProblem.MaxSubArraySum(new int[] { -2, -3, 4, -1, -2, 1, 5, -3 });
             //var sort = ArrayProblem.Segregate012InArray(new int[] { 0, 1, 0, 2, 1 });
+
+            //var array = Array.update1.ArrayProblems.LeftRotateArray(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 2);
+            var arr = Array.update1.ArrayProblems.LeftRotateArrayUsingExtraSpace(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 2);
+
             #endregion
 
             #region Graph Problems 
@@ -231,9 +235,9 @@ namespace Algos
             // expected geksfor
             //string[] words = { "aaa", "bbb", "ccc", "bbb", "aaa", "aaa" };
             //var secondMostRepeatedWord = StringProblem.SecondMostRepeatedWord(words);
-            StringBuilder builder = new StringBuilder("geeksforgeeks");
+            //StringBuilder builder = new StringBuilder("geeksforgeeks");
             //var removeSpaces = StringProblem.RemoveSpacesBetterApproach(builder);
-            var firstNonRepeativeChar = StringProblem.FirstNonRepeativeCharSignleTraverse(builder);
+            //var firstNonRepeativeChar = StringProblem.FirstNonRepeativeCharSignleTraverse(builder);
             #endregion
         }
 
