@@ -66,10 +66,23 @@ namespace Algos.Array.update1
             return arr;
         }
 
-        public static void RightRotateArray(int[] arr, int count)
+        public static int[] RightRotateArray(int[] arr, int count)
         {
             // [1,2,3,4,5,6,7]          
             // rotate by right 1 = [7,1,2,3,4,5,6]
+            int rotation = count - 1;
+            int temp = 0;
+            while (rotation >= 0)
+            {
+                temp = arr[arr.Length - 1];
+                for (int i = arr.Length - 1; i > 0; i--)
+                {
+                    arr[i] = arr[i - 1];
+                }
+                arr[0] = temp;
+                rotation--;
+            }
+            return arr;
         }
 
     }
