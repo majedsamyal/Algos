@@ -195,7 +195,9 @@ namespace Algos
 
             //var array = Array.update1.ArrayProblems.LeftRotateArray(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 2);
             //var arr = Array.update1.ArrayProblems.LeftRotateArrayUsingExtraSpace(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 2);
-            var arr = Array.update1.ArrayProblems.RightRotateArray(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 1);
+            //var arr = Array.update1.ArrayProblems.RightRotateArray(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 1);
+            int[] arr= new int[] { 0,2 };
+            var missingElement = Array.update1.ArrayProblems.FindMissingElementUsingXOR(arr);
 
             #endregion
 

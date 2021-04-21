@@ -66,6 +66,14 @@ namespace Algos.Array.update1
             return arr;
         }
 
+        /// <summary>
+        /// Rotate array one by one
+        /// Time Complexcity:O(N*d), where d is number of rotations
+        /// Space Complexcity:O(1)
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
         public static int[] RightRotateArray(int[] arr, int count)
         {
             // [1,2,3,4,5,6,7]          
@@ -83,6 +91,30 @@ namespace Algos.Array.update1
                 rotation--;
             }
             return arr;
+        }
+
+        /// <summary>
+        /// Using XOR, we will get the missing element from range
+        /// Time Complexcity:O(N), using loop to do XOR of all elements
+        /// Space Complexcity:O(1)
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static int FindMissingElementUsingXOR(int[] arr)
+        {
+            //int[] a = {1, 2, 4, 5, 6};
+            int xorArr = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                xorArr = xorArr ^ arr[i];
+            }
+
+            for (int i = 1; i < arr.Length + 1; i++)
+            {
+                xorArr = xorArr ^ i;
+            }
+
+            return xorArr;
         }
 
     }
