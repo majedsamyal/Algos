@@ -117,5 +117,47 @@ namespace Algos.Array.update1
             return xorArr;
         }
 
+        public static int[] MergeTwoSortedArrayUsingExtraSpace(int[] arr1, int[] arr2)
+        {
+            //input: arr1[] = { 1, 3, 4, 5}, arr2[] = {2, 4, 6, 8} 
+            // size of result array
+            int[] result = new int[arr1.Length + arr2.Length];
+
+            int i = 0;
+            int j = 0;
+            int k = 0; // result array index
+
+            while (i < arr1.Length && j < arr2.Length)
+            {
+                if (arr1[i] < arr2[j])
+                {
+                    result[k] = arr1[i];
+                    i++;
+                }
+                else
+                {
+                    result[k] = arr2[j];
+                    j++;
+                }
+                // always increament
+                k++;
+            }
+
+            while (i < arr1.Length)
+            {
+                result[k] = arr1[i];
+                k++;
+                i++;
+            }
+            while (j < arr2.Length)
+            {
+                result[k] = arr2[j];
+                k++;
+                j++;
+            }
+
+            return result;
+        }
+
     }
 }
