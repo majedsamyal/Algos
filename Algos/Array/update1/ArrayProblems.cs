@@ -117,6 +117,14 @@ namespace Algos.Array.update1
             return xorArr;
         }
 
+        /// <summary>
+        /// Take third array of space arr1.Length + arr2.Length, using while loop compare and added elements to this new array
+        /// Time Complexcity:O(N)
+        /// Space Complexcity:O(N + M), using extra space
+        /// </summary>
+        /// <param name="arr1"></param>
+        /// <param name="arr2"></param>
+        /// <returns></returns>
         public static int[] MergeTwoSortedArrayUsingExtraSpace(int[] arr1, int[] arr2)
         {
             //input: arr1[] = { 1, 3, 4, 5}, arr2[] = {2, 4, 6, 8} 
@@ -157,6 +165,44 @@ namespace Algos.Array.update1
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Initialize variables and compare two array, update first array
+        /// Time Complexcity:O(N)
+        /// Space Complexcity:O(1), as given first array has extra space already
+        /// </summary>
+        /// <param name="arr1"></param>
+        /// <param name="arr2"></param>
+        /// <returns></returns>
+        public static int[] MergeTwoSortedArrayIntoOne(int[] arr1, int[] arr2)
+        {
+            // leetcode
+            // assume arr1 has space for arr2 elements
+            // return sorted arr1
+            // Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+
+            int i = (arr1.Length - arr2.Length) - 1;
+            int j = arr2.Length - 1;
+            int k;
+
+            for (k = arr1.Length - 1; k >= arr2.Length; k--)
+            {
+                if (arr2[j] > arr1[i])
+                {
+                    arr1[k] = arr2[j];
+                    j--;
+                }
+                else
+                {
+                    arr1[k] = arr1[i];
+                    arr1[i] = arr2[j];
+                    i--;
+                }
+            }
+
+            // nums1 = [1,2,3], m = 3, nums2 = [2,5,6], n = 3
+            return arr1;
         }
 
     }
