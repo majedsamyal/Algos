@@ -198,10 +198,12 @@ namespace Algos
             //var arr = Array.update1.ArrayProblems.RightRotateArray(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 1);
             int[] arr = new int[] { 0, 2 };
             //var missingElement = Array.update1.ArrayProblems.FindMissingElementUsingXOR(arr);
-            int[] arr1 = new[] { 1, 2, 3, 0, 0, 0 };
+            int[] arr1 = new[] { 1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8 };
             int[] arr2 = new[] { 2, 5, 6 };
             //var mergeTwoSortedArray = Array.update1.ArrayProblems.MergeTwoSortedArrayUsingExtraSpace(arr1, arr2);
-            var mergeTwoSortedArray = Array.update1.ArrayProblems.MergeTwoSortedArrayIntoOne(arr1, arr2);
+            //var mergeTwoSortedArray = Array.update1.ArrayProblems.MergeTwoSortedArrayIntoOne(arr1, arr2);
+            //var singleAppearElement = Array.update1.ArrayProblems.FindElementAppearsOnceUsingXOR(arr1);
+            Array.update1.ArrayProblems.FindElementAppearsOnceUsingBinarySearch(arr1, 0, arr1.Length - 1);
 
 
             #endregion

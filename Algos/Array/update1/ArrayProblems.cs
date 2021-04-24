@@ -205,5 +205,102 @@ namespace Algos.Array.update1
             return arr1;
         }
 
+        /// <summary>
+        /// Find using XOR logic operator, assuming there will be always max two occurance (any even number) of other intergers 
+        /// Time Complexcity:O(N), using loop to traverse the array
+        /// Space Complexcity:O(1)
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static int FindElementAppearsOnceUsingXOR(int[] arr)
+        {
+            // arr[] = {1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8}
+
+            int i = 0;
+            int result = 0;
+            while (i < arr.Length)
+            {
+                result = result ^ arr[i];
+                i++;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Using simple while loop, increment the index by 2 each time
+        /// Time Complexcity:O(N)
+        /// Space Complexcity:O(1)
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static int FindElementAppearsOnceUsingLoop(int[] arr)
+        {
+            // arr[] = {1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8}
+            int i = 0;
+
+            while (i < arr.Length)
+            {
+                if (arr[i] != arr[i + 1])
+                {
+                    return arr[i];
+                }
+                i += 2;
+            }
+
+            return -1;
+        }
+
+        /// <summary>
+        /// Using Binary Search, this array has one property the first occurance exists at even and second at odd if target element not found in a range.
+        /// Time Complexcity:O(log N)
+        /// Space Complexcity:O(1)
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="low"></param>
+        /// <param name="high"></param>
+        public static void FindElementAppearsOnceUsingBinarySearch(int[] arr, int low, int high)
+        {
+            // arr[] = {1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8}
+
+            if (low > high)
+                return ;
+            if (low == high)
+            {
+                Console.WriteLine(arr[low]);
+                return;
+
+            }                
+
+            int mid = (low + high) / 2;
+
+            if (mid % 2 == 0) // even
+            {
+                if (arr[mid] == arr[mid + 1])
+                {
+                    // element in second portion of array
+                    FindElementAppearsOnceUsingBinarySearch(arr, mid + 1, high);
+                }
+                else
+                {
+                    // element in first portion of array
+                    FindElementAppearsOnceUsingBinarySearch(arr, low, mid);
+                }
+            }
+
+            else if (mid % 2 == 1) //odd
+            {
+                if (arr[mid] == arr[mid - 1])
+                {
+                    // element in second portion of array
+                    FindElementAppearsOnceUsingBinarySearch(arr, mid + 1, high);
+                }
+                else
+                {
+                    // element in first portion of array
+                    FindElementAppearsOnceUsingBinarySearch(arr, low, mid - 1);
+                }
+            }
+        }
     }
 }
