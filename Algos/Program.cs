@@ -199,11 +199,12 @@ namespace Algos
             int[] arr = new int[] { 0, 2 };
             //var missingElement = Array.update1.ArrayProblems.FindMissingElementUsingXOR(arr);
             int[] arr1 = new[] { 1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8 };
-            int[] arr2 = new[] { 2, 5, 6 };
+            int[] arr2 = new[] { 2, 5, 6, 8, 11, 21 };
             //var mergeTwoSortedArray = Array.update1.ArrayProblems.MergeTwoSortedArrayUsingExtraSpace(arr1, arr2);
             //var mergeTwoSortedArray = Array.update1.ArrayProblems.MergeTwoSortedArrayIntoOne(arr1, arr2);
             //var singleAppearElement = Array.update1.ArrayProblems.FindElementAppearsOnceUsingXOR(arr1);
-            Array.update1.ArrayProblems.FindElementAppearsOnceUsingBinarySearch(arr1, 0, arr1.Length - 1);
+            //Array.update1.ArrayProblems.FindElementAppearsOnceUsingBinarySearch(arr1, 0, arr1.Length - 1);
+            var item = Array.update1.ArrayProblems.FindItemUsingBinarySearch(arr2, 5, 0, arr2.Length - 1);
 
 
             #endregion

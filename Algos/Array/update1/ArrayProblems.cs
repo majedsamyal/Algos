@@ -264,13 +264,13 @@ namespace Algos.Array.update1
             // arr[] = {1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8}
 
             if (low > high)
-                return ;
+                return;
             if (low == high)
             {
                 Console.WriteLine(arr[low]);
                 return;
 
-            }                
+            }
 
             int mid = (low + high) / 2;
 
@@ -300,6 +300,30 @@ namespace Algos.Array.update1
                     // element in first portion of array
                     FindElementAppearsOnceUsingBinarySearch(arr, low, mid - 1);
                 }
+            }
+        }
+
+        public static int FindItemUsingBinarySearch(int[] arr, int item, int low, int high)
+        {
+            if (low > high)
+            {
+                // base case
+                // item not found
+                return -1;
+            }
+            int mid = low + ((high - low) / 2);
+
+            if (arr[mid] == item)
+            {
+                return mid;
+            }
+            else if (item < arr[mid])
+            {
+                return FindItemUsingBinarySearch(arr, item, low, mid - 1);
+            }
+            else
+            {
+                return FindItemUsingBinarySearch(arr, item, mid + 1, high);
             }
         }
     }
