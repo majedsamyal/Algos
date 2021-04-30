@@ -204,10 +204,14 @@ namespace Algos
             //var mergeTwoSortedArray = Array.update1.ArrayProblems.MergeTwoSortedArrayIntoOne(arr1, arr2);
             //var singleAppearElement = Array.update1.ArrayProblems.FindElementAppearsOnceUsingXOR(arr1);
             //Array.update1.ArrayProblems.FindElementAppearsOnceUsingBinarySearch(arr1, 0, arr1.Length - 1);
-            var item = Array.update1.ArrayProblems.FindItemUsingBinarySearch(arr2, 5, 0, arr2.Length - 1);
+            //var item = Array.update1.ArrayProblems.FindItemUsingBinarySearch(arr2, 5, 0, arr2.Length - 1);
+            int[] arrUnSorted = new[] { 8, 4, 3, 12, 25, 6, 13, 10 };
+            var copy = new int[arrUnSorted.Length];
+            System.Array.Copy(arrUnSorted, copy, 0);
+            Array.update1.ArrayProblems.MergeSort(arrUnSorted, copy, 0, arrUnSorted.Length - 1);
 
 
-            #endregion
+            #endregion  
 
             #region Graph Problems 
 

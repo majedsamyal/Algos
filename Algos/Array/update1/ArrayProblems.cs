@@ -303,6 +303,7 @@ namespace Algos.Array.update1
             }
         }
 
+
         public static int FindItemUsingBinarySearch(int[] arr, int item, int low, int high)
         {
             if (low > high)
@@ -324,6 +325,53 @@ namespace Algos.Array.update1
             else
             {
                 return FindItemUsingBinarySearch(arr, item, mid + 1, high);
+            }
+        }
+
+        public static void MergeSort(int[] arr, int[] auxArr, int low, int high)
+        {
+            // base case
+            if (low == high)
+            {
+                return;
+            }
+            int mid = low + ((high - low) / 2);
+            MergeSort(arr, auxArr, low, mid); // left sides of each sub partitions
+            MergeSort(arr, auxArr, mid + 1, high); // right sides of each partitions
+
+            // call merge method
+            Merge(arr, auxArr, low, mid, high);
+        }
+
+        private static void Merge(int[] arr, int[] auxArr, int low, int mid, int high)
+        {
+            int k = low, i = low, j = mid + 1;
+
+            while (i <= mid && j <= high)
+            {
+                if (arr[i] <= arr[j])
+                {
+                    auxArr[k++] = arr[i++];
+                }
+                else
+                {
+                    auxArr[k++] = arr[j++];
+                }
+            }
+
+            while (i <= mid)
+            {
+                auxArr[k++] = arr[i++];
+            }
+
+            while (j <= high)
+            {
+                auxArr[k++] = arr[j++];
+            }
+
+            for (i = low; i <= high; i++)
+            {
+                arr[i] = auxArr[i];
             }
         }
     }
