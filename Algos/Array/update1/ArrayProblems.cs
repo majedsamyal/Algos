@@ -343,7 +343,7 @@ namespace Algos.Array.update1
             Merge(arr, auxArr, low, mid, high);
         }
 
-        private static void Merge(int[] arr, int[] auxArr, int low, int mid, int high)
+        private static void Merge(int[] arr, int[] aux, int low, int mid, int high)
         {
             int k = low, i = low, j = mid + 1;
 
@@ -351,27 +351,54 @@ namespace Algos.Array.update1
             {
                 if (arr[i] <= arr[j])
                 {
-                    auxArr[k++] = arr[i++];
+                    aux[k++] = arr[i++];
                 }
                 else
                 {
-                    auxArr[k++] = arr[j++];
+                    aux[k++] = arr[j++];
                 }
             }
-
             while (i <= mid)
             {
-                auxArr[k++] = arr[i++];
+                aux[k++] = arr[i++];
             }
 
             while (j <= high)
             {
-                auxArr[k++] = arr[j++];
+                aux[k++] = arr[j++];
             }
 
             for (i = low; i <= high; i++)
             {
-                arr[i] = auxArr[i];
+                arr[i] = aux[i];
+            }
+        }
+
+        public static int MaxNumberInIncreasingAndDecreasingArray(int[] arr, int low, int high)
+        {
+            // {1,3,5,6,9,6,4,2,1,0}
+
+            if (low == high)
+            {
+                return arr[low];
+            }
+
+            int mid = low + ((high - low) / 2);
+
+            if (arr[mid] > arr[mid - 1] && arr[mid] > arr[mid + 1])
+            {
+                return arr[mid];
+            }
+
+            if (arr[mid] > arr[mid - 1] && arr[mid] < arr[mid + 1])
+            {
+                // ignore left array
+                return MaxNumberInIncreasingAndDecreasingArray(arr, mid + 1, high);
+            }
+            else
+            {
+                // ignore right array
+                return MaxNumberInIncreasingAndDecreasingArray(arr, low, mid - 1);
             }
         }
     }
