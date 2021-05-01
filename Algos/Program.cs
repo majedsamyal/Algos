@@ -206,9 +206,11 @@ namespace Algos
             //Array.update1.ArrayProblems.FindElementAppearsOnceUsingBinarySearch(arr1, 0, arr1.Length - 1);
             //var item = Array.update1.ArrayProblems.FindItemUsingBinarySearch(arr2, 5, 0, arr2.Length - 1);
             int[] arrUnSorted = new[] { 8, 4, 3, 12, 25, 6, 13, 10 };
-            var copy = new int[arrUnSorted.Length];
-            System.Array.Copy(arrUnSorted, copy, 0);
-            Array.update1.ArrayProblems.MergeSort(arrUnSorted, copy, 0, arrUnSorted.Length - 1);
+            //var copy = new int[arrUnSorted.Length];
+            // System.Array.Copy(arrUnSorted, copy, 0);
+            //Array.update1.ArrayProblems.MergeSort(arrUnSorted, copy, 0, arrUnSorted.Length - 1);
+            int[] arr3 = new[] { 1,3, 5, 6, 9, 6, 4, 2, 1, 0 };
+            var largestNumber = Array.update1.ArrayProblems.MaxNumberInIncreasingAndDecreasingArray(arr3, 0, arrUnSorted.Length - 1);
 
 
             #endregion  
