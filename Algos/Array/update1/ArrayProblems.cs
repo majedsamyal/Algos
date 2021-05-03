@@ -401,5 +401,35 @@ namespace Algos.Array.update1
                 return MaxNumberInIncreasingAndDecreasingArray(arr, low, mid - 1);
             }
         }
+
+        public static void SortArrayOf01And2s(int[] arr)
+        {
+            int start = 0, end = arr.Length - 1, mid = 0, pivot = 1;
+
+            while (mid <= end)
+            {
+                if (arr[mid] > pivot)
+                {
+                    // swap mid with j
+                    int temp = arr[mid];
+                    arr[mid] = arr[end];
+                    arr[end] = temp;
+                    end--;
+                }
+                else if (arr[mid] < pivot)
+                {
+                    // swap mid = i
+                    int temp = arr[mid];
+                    arr[mid] = arr[start];
+                    arr[start] = temp;
+                    start++;
+                    mid++;
+                }
+                else
+                {
+                    mid++;
+                }
+            }
+        }
     }
 }
