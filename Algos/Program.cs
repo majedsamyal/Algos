@@ -209,9 +209,10 @@ namespace Algos
             //var copy = new int[arrUnSorted.Length];
             // System.Array.Copy(arrUnSorted, copy, 0);
             //Array.update1.ArrayProblems.MergeSort(arrUnSorted, copy, 0, arrUnSorted.Length - 1);
-            int[] arr3 = new[] { 1,3, 5, 6, 9, 6, 4, 2, 1, 0 };
-            var largestNumber = Array.update1.ArrayProblems.MaxNumberInIncreasingAndDecreasingArray(arr3, 0, arrUnSorted.Length - 1);
-
+            //int[] arr3 = new[] { 1,3, 5, 6, 9, 6, 4, 2, 1, 0 };
+            //var largestNumber = Array.update1.ArrayProblems.MaxNumberInIncreasingAndDecreasingArray(arr3, 0, arrUnSorted.Length - 1);
+            int[] sortTo = new int[] { 0, 1, 2, 0, 1, 2 };
+            Array.update1.ArrayProblems.SortArrayOf01And2s(sortTo);
 
             #endregion  
 
