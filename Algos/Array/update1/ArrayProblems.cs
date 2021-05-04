@@ -431,5 +431,28 @@ namespace Algos.Array.update1
                 }
             }
         }
+
+        public static int JumpGameProblem(int[] arr)
+        {
+            int a = arr[0], b = arr[0], jump = 1;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (i == arr.Length - 1)
+                    return jump;
+
+                a--;
+                b--;
+                b = Math.Max(b, arr[i]);
+
+                if (a == 0)
+                {
+                    jump++;
+                    a = b;
+                }
+            }
+
+            return jump;
+        }
     }
 }
