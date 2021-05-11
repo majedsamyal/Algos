@@ -454,5 +454,82 @@ namespace Algos.Array.update1
 
             return jump;
         }
+
+        public static int[] FindNextImmediateMaxNumber(int[] arr)
+        {
+            int i;
+            // find element to swap
+            for (i = arr.Length - 1; i > 0; i--)
+            {
+                if (arr[i] > arr[i - 1])
+                {
+                    i--;
+                    break;
+                }
+            }
+
+            // check if we have reached end
+            if (i == 0)
+            {
+                Console.WriteLine("Not possible");
+                return null;
+            }
+            else
+            {
+                // find next immediate big number 
+                int immediateMax = int.MaxValue;
+                int j;
+                int k = -1;
+                for (j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[j] > arr[i] && arr[j] < immediateMax)
+                    {
+                        k = j;
+                        immediateMax = Math.Min(arr[j], immediateMax);
+                    }
+                }
+
+                // swap i with j 
+                int temp = arr[i];
+                arr[i] = arr[k];
+                arr[k] = temp;
+
+                // sort array
+
+                System.Array.Sort(arr, i + 1, (arr.Length - 1) - i);
+                return arr;
+            }
+        }
+
+        public static int MaximumPlatformsRequired(int[] arrival, int[] departure)
+        {
+            // sort bot array
+            System.Array.Sort(arrival);
+            System.Array.Sort(departure);
+
+            int maxPlatform = 1;
+            int platformNeeded = 1;
+            int i = 1, j = 0;
+
+            while (i < arrival.Length && j < departure.Length)
+            {
+                if (arrival[i] <= departure[j])
+                {
+                    platformNeeded++;
+                    i++;
+                    if (platformNeeded > maxPlatform)
+                    {
+                        maxPlatform = platformNeeded;
+                    }
+                }
+                else
+                {
+                    platformNeeded--;
+                    j++;
+                }
+            }
+
+            return maxPlatform;
+        }
     }
 }
