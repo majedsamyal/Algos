@@ -531,5 +531,57 @@ namespace Algos.Array.update1
 
             return maxPlatform;
         }
+
+        public static void PrintMatrixInSpriralOrder(int[,] arr, int row, int col)
+        {
+            // n k  1    2   3   4  m
+            //      5    6   7   8
+            //      9   10  11  12
+            // p   13  14  15  16
+
+            int k = 0, m = col - 1, n = 0, p = row - 1;
+
+            int i;
+            int j;
+            while (true)
+            {
+                if (k > m || n > p)
+                {
+                    break;
+                }
+
+                i = k;
+                for (j = k; j < m; j++)
+                {
+                    Console.WriteLine(arr[i, j]);
+                }
+
+                j = m;
+                for (i = n; i < p; i++)
+                {
+                    Console.WriteLine(arr[i, j]);
+                }
+
+                i = p;
+                for (j = m; j > k; j--)
+                {
+                    Console.WriteLine(arr[i, j]);
+                }
+
+                j = k;
+                for (i = p; i > n; i--)
+                {
+                    Console.WriteLine(arr[i, j]);
+                }
+
+                k++;
+                m--;
+                n++;
+                p--;
+
+
+            }
+
+        }
     }
 }

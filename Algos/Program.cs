@@ -219,9 +219,15 @@ namespace Algos
 
             //int[] arrInput = new[] { 2,3,5,9,1 };
             //var output = Array.update1.ArrayProblems.FindNextImmediateMaxNumber(arrInput);
-            int[] arrivals = { 100, 140, 150, 200, 215, 400 };
-            int[] departures = { 110, 300, 220, 230, 315, 600 };
-            var totalPlatformRequired = Array.update1.ArrayProblems.MaximumPlatformsRequired(arrivals, departures);
+            //int[] arrivals = { 100, 140, 150, 200, 215, 400 };
+            //int[] departures = { 110, 300, 220, 230, 315, 600 };
+            //var totalPlatformRequired = Array.update1.ArrayProblems.MaximumPlatformsRequired(arrivals, departures);
+            int[,] a = { { 1, 2, 3, 4},
+                      { 5, 6, 7, 8},
+                      { 9, 10, 11, 12},
+                      { 13, 14, 15, 16},
+            };
+            Array.update1.ArrayProblems.PrintMatrixInSpriralOrder(a, 4, 4);
 
 
             #endregion  
