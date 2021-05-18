@@ -583,5 +583,31 @@ namespace Algos.Array.update1
             }
 
         }
+
+        public static void FrequencyOfElements(int[] arr)
+        {
+            int n = arr.Length;
+
+            // decreament array values by 1 to get the valid index
+
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] -= 1;
+            }
+
+            // increament array elements by length = 7
+
+            for (int i = 0; i < n; i++)
+            {
+                arr[arr[i] % n] += n;
+            }
+
+            // print frequency 
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(i + 1 + ":" + arr[i] / n);
+            }
+        }
     }
 }
