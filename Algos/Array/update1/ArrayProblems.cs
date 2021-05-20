@@ -609,5 +609,60 @@ namespace Algos.Array.update1
                 Console.WriteLine(i + 1 + ":" + arr[i] / n);
             }
         }
+
+        public static void StockBuySellProblem(int[] arr)
+        {
+            // 98,178,250,300,40,540,690
+            int count = 0;
+            List<Trade> lstTrades = new List<Trade>();
+            Trade trade;
+            if (arr.Length == 1)
+            {
+                return;
+            }
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                // find local minima
+
+                while ((i < arr.Length - 1) && arr[i + 1] <= arr[i])
+                {
+                    i++;
+                }
+
+                // check if we have reached at the end of array
+                if (i == arr.Length - 1)
+                {
+                    // no trade found
+                    break;
+                }
+
+                trade = new Trade() { BuyIndex = i++ };
+
+                // find local maxima
+
+                while ((i < arr.Length) && arr[i - 1] <= arr[i])
+                {
+                    i++;
+                }
+
+                trade.SellIndex = i - 1;
+
+                lstTrades.Add(trade);
+                count++;
+            }
+
+            if (count == 0)
+            {
+                Console.WriteLine("No trade found");
+            }
+            else
+            {
+                for (int i = 0; i < lstTrades.Count; i++)
+                {
+                    Console.WriteLine($"Buy at index: {lstTrades[i].BuyIndex} and Sell at index: {lstTrades[i].SellIndex}");
+                }
+            }
+        }
     }
 }
