@@ -230,9 +230,17 @@ namespace Algos
             //Array.update1.ArrayProblems.PrintMatrixInSpriralOrder(a, 4, 4);
             //int[] frequencyArr = new int[] { 5, 2, 7, 7, 5, 5, 2 };
             //Array.update1.ArrayProblems.FrequencyOfElements(frequencyArr);
-            int[] arrStock = new int[] { 98, 178, 250, 300, 40, 540, 690 };
-            Array.update1.ArrayProblems.StockBuySellProblem(arrStock);
+            //int[] arrStock = new int[] { 98, 178, 250, 300, 40, 540, 690 };
+            //Array.update1.ArrayProblems.StockBuySellProblem(arrStock);
 
+            int[,] mat = {
+            { 1, 2, 3, 4 },
+            { 5, 6, 7, 8 },
+            { 9, 10, 11, 12 },
+            { 13, 14, 15, 16 }
+            };
+
+            Array.update1.ArrayProblems.RotateMatrixBy90(mat,4);
 
 
             #endregion  

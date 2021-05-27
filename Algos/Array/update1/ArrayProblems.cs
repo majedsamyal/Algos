@@ -664,5 +664,38 @@ namespace Algos.Array.update1
                 }
             }
         }
+
+        public static void RotateMatrixBy90(int[,] matrix, int n)
+        {
+            //int[,] mat = {
+            //{ 1, 2, 3, 4 },
+            //{ 5, 6, 7, 8 },
+            //{ 9, 10, 11, 12 },
+            //{ 13, 14, 15, 16 }
+            //};
+
+            int layers = n / 2;
+
+            for (int i = 0; i < layers; i++)
+            {
+                for (int j = i; j < n - 1 - i; j++)
+                {
+                    // store 4
+                    int temp = matrix[j, n - 1 - i];
+
+                    // swap 4 with 1
+                    matrix[j, n - 1 - i] = matrix[i, j];
+
+                    // swap 1 with 13
+                    matrix[i, j] = matrix[n - j -1 ,i];
+
+                    // swap 13 with 16
+                    matrix[n - j - 1, i] = matrix[n - 1 - i, n - 1 - j];
+
+                    // swap 16 with temp = 4
+                    matrix[n - 1 - i, n - 1 - j] = temp;
+                }
+            }
+        }
     }
 }
