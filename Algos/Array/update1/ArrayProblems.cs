@@ -687,7 +687,7 @@ namespace Algos.Array.update1
                     matrix[j, n - 1 - i] = matrix[i, j];
 
                     // swap 1 with 13
-                    matrix[i, j] = matrix[n - j -1 ,i];
+                    matrix[i, j] = matrix[n - j - 1, i];
 
                     // swap 13 with 16
                     matrix[n - j - 1, i] = matrix[n - 1 - i, n - 1 - j];
@@ -696,6 +696,41 @@ namespace Algos.Array.update1
                     matrix[n - 1 - i, n - 1 - j] = temp;
                 }
             }
+        }
+
+        private static bool Knows(int[,] matrix, int a, int b)
+        {
+            return matrix[a, b] == 1;
+        }
+        public static void FindCelebrity(int[,] matrix, int n)
+        {
+            int a = 0;
+            int b = n - 1;
+
+            while (a < b)
+            {
+                if (Knows(matrix, a, b))
+                {
+                    a++;
+                }
+                else
+                {
+                    b--;
+                }
+            }
+
+            // check if a is celebrity or not
+
+            for (int i = 0; i < n ; i++)
+            {
+                if (i != a && (Knows(matrix, a, i) || !Knows(matrix, i, a)))
+                {
+                    Console.WriteLine("No celebrity found");
+                    return;
+                }
+            }
+
+            Console.WriteLine($"Celebrity found at index: {a}");
         }
     }
 }
