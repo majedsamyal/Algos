@@ -242,14 +242,18 @@ namespace Algos
 
             //Array.update1.ArrayProblems.RotateMatrixBy90(mat,4);
 
-            int[,] matrix = { { 0, 0, 1, 0 },
-                              { 0, 0, 1, 0 },
-                              { 0, 0, 0, 0 },
-                              { 0, 0, 1, 0 }
-            };
+            //int[,] matrix = { { 0, 0, 1, 0 },
+            //                  { 0, 0, 1, 0 },
+            //                  { 0, 0, 0, 0 },
+            //                  { 0, 0, 1, 0 }
+            //};
 
 
-            Array.update1.ArrayProblems.FindCelebrity(matrix, 4);
+            //Array.update1.ArrayProblems.FindCelebrity(matrix, 4);
+
+            int[] part = new[] { 4, 3, 9, 5,11, 1, 23 };
+
+            int kth = Array.update1.ArrayProblems.KthSmallestElement(part, 0, 6, 5);
 
 
             #endregion  
