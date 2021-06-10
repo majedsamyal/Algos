@@ -721,7 +721,7 @@ namespace Algos.Array.update1
 
             // check if a is celebrity or not
 
-            for (int i = 0; i < n ; i++)
+            for (int i = 0; i < n; i++)
             {
                 if (i != a && (Knows(matrix, a, i) || !Knows(matrix, i, a)))
                 {
@@ -731,6 +731,97 @@ namespace Algos.Array.update1
             }
 
             Console.WriteLine($"Celebrity found at index: {a}");
+        }
+
+        public static int KthSmallestElement(int[] arr, int low, int high, int kth)
+        {
+            while (low <= high)
+            {
+                if (low == kth - 1)
+                {
+                    return arr[low];
+                }
+
+                // find position to divide the array
+                int position = Partition(arr, low, high);
+
+                if (position - low == kth - 1)
+                {
+                    return arr[position];
+                }
+
+                if (position - low > kth - 1)
+                {
+                    KthSmallestElement(arr, low, position - 1, kth);
+                }
+
+                // traverse right array portion
+                KthSmallestElement(arr, position + 1, high, kth - position);
+
+            }
+
+            return int.MaxValue;
+        }
+
+        private static int Partition(int[] arr, int low, int high)
+        {
+            int pivot = arr[high];
+            int i = low;
+
+            for (int j = low; j < high; j++)
+            {
+                if (arr[j] <= pivot)
+                {
+                    // swap i and j 
+                    int temp1 = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp1;
+                    i++;
+                }
+            }
+
+            // swap i and pivot
+            int temp = arr[i];
+            arr[i] = pivot;
+            arr[high] = temp;
+
+            return i;
+        }
+
+        public static int SquareRoot(int num)
+        {
+            // base case
+
+            if (num == 0 || num == 1)
+            {
+                return num;
+            }
+
+            int low = 1, high = num, result = 0;
+
+            while (low <= high)
+            {
+                int mid = (high + low) / 2;
+
+                if (mid * mid == num)
+                {
+                    return mid;
+                }
+
+                if (mid * mid < num)
+                {
+                    // search right array
+                    low = mid + 1;
+                    // update result since we need a floor
+                    result = mid;
+                }
+                else
+                {
+                    // search left array
+                    high = mid - 1;
+                }
+            }
+            return result;
         }
     }
 }
