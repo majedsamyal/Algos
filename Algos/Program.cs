@@ -251,9 +251,11 @@ namespace Algos
 
             //Array.update1.ArrayProblems.FindCelebrity(matrix, 4);
 
-            int[] part = new[] { 4, 3, 9, 5,11, 1, 23 };
+            //int[] part = new[] { 4, 3, 9, 5,11, 1, 23 };
 
-            int kth = Array.update1.ArrayProblems.KthSmallestElement(part, 0, 6, 5);
+            //int kth = Array.update1.ArrayProblems.KthSmallestElement(part, 0, 6, 5);
+
+            int result = Array.update1.ArrayProblems.TrappingRainWater(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 });
 
 
             #endregion  
