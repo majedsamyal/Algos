@@ -823,5 +823,36 @@ namespace Algos.Array.update1
             }
             return result;
         }
+
+        public static int TrappingRainWater(int[] arr)
+        {
+            // {3, 0, 2, 0, 4}
+            int[] maxRightArr = new int[arr.Length];
+            int[] maxLeftArr = new int[arr.Length];
+
+            int max = int.MinValue;
+            for (int i = arr.Length - 1; i >= 0; i--)
+            {
+                max = Math.Max(max, arr[i]);
+                maxRightArr[i] = max;
+            }
+
+            max = int.MinValue;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                max = Math.Max(max, arr[i]);
+                maxLeftArr[i] = max;
+            }
+
+            int result = 0;
+            int min;
+            for (int i = 1; i < arr.Length - 1; i++)
+            {
+                min = Math.Min(maxRightArr[i], maxLeftArr[i]);
+                result += min - arr[i];
+            }
+
+            return result;
+        }
     }
 }
