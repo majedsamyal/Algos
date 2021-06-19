@@ -255,7 +255,12 @@ namespace Algos
 
             //int kth = Array.update1.ArrayProblems.KthSmallestElement(part, 0, 6, 5);
 
-            int result = Array.update1.ArrayProblems.TrappingRainWater(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 });
+            //int result = Array.update1.ArrayProblems.TrappingRainWater(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 });
+
+            int[] arrayToCheck = new[] { 1, 20, 6, 7, 5, 8, 11, 3 };
+            var tempArr = new int[arrayToCheck.Length];
+            System.Array.Copy(arrayToCheck, tempArr, 0);
+            int inversionCount = Array.update1.ArrayProblems.InversionCountOfArray(arrayToCheck, tempArr, 0, arrayToCheck.Length - 1);
 
 
             #endregion  
