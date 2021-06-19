@@ -854,5 +854,71 @@ namespace Algos.Array.update1
 
             return result;
         }
+
+        public static int InversionCountOfArray(int[] arr, int[] temp, int low, int high)
+        {
+            return MergeSortInversion(arr, temp, low, high);
+        }
+
+        private static int MergeSortInversion(int[] arr, int[] temp, int low, int high)
+        {
+            if (low == high)
+            {
+                return 0;
+            }
+            int inversionCount = 0;
+            int mid = (high + low) / 2;
+
+            // left 
+            inversionCount += MergeSortInversion(arr, temp, low, mid);
+
+            // right 
+            inversionCount += MergeSortInversion(arr, temp, mid + 1, high);
+
+            inversionCount += MergeInversion(arr, temp, low, mid, high);
+
+
+            return inversionCount;
+        }
+
+        private static int MergeInversion(int[] arr, int[] temp, int low, int mid, int high)
+        {
+            int inversionCount = 0;
+            // merge two sorted arrays
+
+            int k = low, i = low, j = mid + 1;
+
+            while (i <= mid && j <= high)
+            {
+                if (arr[i] <= arr[j])
+                {
+                    temp[k++] = arr[i++];
+                }
+                else
+                {
+                    temp[k++] = arr[j++];
+                    inversionCount += (mid - i + 1); // Note
+                }
+            }
+
+            // copy remaining elements
+            while (i <= mid)
+            {
+                temp[k++] = arr[i++];
+            }
+
+            while (j <= high)
+            {
+                temp[k++] = arr[j++];
+            }
+
+            // copy back to the original array to reflect sorted order
+            for (i = low; i <= high; i++)
+            {
+                arr[i] = temp[i];
+            }
+
+            return inversionCount;
+        }
     }
 }
