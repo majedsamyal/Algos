@@ -257,10 +257,25 @@ namespace Algos
 
             //int result = Array.update1.ArrayProblems.TrappingRainWater(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 });
 
-            int[] arrayToCheck = new[] { 1, 20, 6, 7, 5, 8, 11, 3 };
-            var tempArr = new int[arrayToCheck.Length];
-            System.Array.Copy(arrayToCheck, tempArr, 0);
-            int inversionCount = Array.update1.ArrayProblems.InversionCountOfArray(arrayToCheck, tempArr, 0, arrayToCheck.Length - 1);
+            //int[] arrayToCheck = new[] { 1, 20, 6, 7, 5, 8, 11, 3 };
+            //var tempArr = new int[arrayToCheck.Length];
+            //System.Array.Copy(arrayToCheck, tempArr, 0);
+            //int inversionCount = Array.update1.ArrayProblems.InversionCountOfArray(arrayToCheck, tempArr, 0, arrayToCheck.Length - 1);
+
+            // Insert, Search, Delete, GetRandom in O(1)
+            ProDataStructure proDataStructure = new ProDataStructure();
+            proDataStructure.Insert(2);
+            proDataStructure.Insert(5);
+            proDataStructure.Insert(9);
+            proDataStructure.Insert(3);
+
+            proDataStructure.Remove(2);
+            proDataStructure.Insert(8);
+            var output = proDataStructure.Search(5);
+
+            var random = proDataStructure.GetRandom();
+
+            proDataStructure.Insert(11);
 
 
             #endregion  
