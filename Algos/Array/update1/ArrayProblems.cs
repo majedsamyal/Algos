@@ -920,5 +920,52 @@ namespace Algos.Array.update1
 
             return inversionCount;
         }
+
+        public static int MedianOfTwoSortedArrays1(int[] arr1, int[] arr2)
+        {
+            int len = arr1.Length;
+            // find nth and n -1 index element 
+            // sum two elements and / 2
+            int counter;
+            int i = 0;
+            int j = 0;
+            int m1 = -1;
+            int m2 = -1;
+
+            for (counter = 0; counter <= len; counter++)
+            {
+
+                if (i == len)
+                {
+                    m1 = m2;
+                    m2 = arr2[0];
+                    break;
+                }
+
+                if (j == len)
+                {
+                    m1 = m2;
+                    m2 = arr1[0];
+                    break;
+                }
+
+                if (arr1[i] <= arr2[j])
+                {
+                    // store previous median
+                    m1 = m2;
+                    m2 = arr1[i];
+                    i++;
+                }
+                else
+                {
+                    // store previous median
+                    m1 = m2;
+                    m2 = arr2[j];
+                    j++;
+                }
+            }
+
+            return (m1 + m2) / 2;
+        }
     }
 }

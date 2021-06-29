@@ -263,19 +263,23 @@ namespace Algos
             //int inversionCount = Array.update1.ArrayProblems.InversionCountOfArray(arrayToCheck, tempArr, 0, arrayToCheck.Length - 1);
 
             // Insert, Search, Delete, GetRandom in O(1)
-            ProDataStructure proDataStructure = new ProDataStructure();
-            proDataStructure.Insert(2);
-            proDataStructure.Insert(5);
-            proDataStructure.Insert(9);
-            proDataStructure.Insert(3);
+            //ProDataStructure proDataStructure = new ProDataStructure();
+            //proDataStructure.Insert(2);
+            //proDataStructure.Insert(5);
+            //proDataStructure.Insert(9);
+            //proDataStructure.Insert(3);
 
-            proDataStructure.Remove(2);
-            proDataStructure.Insert(8);
-            var output = proDataStructure.Search(5);
+            //proDataStructure.Remove(2);
+            //proDataStructure.Insert(8);
+            //var output = proDataStructure.Search(5);
 
-            var random = proDataStructure.GetRandom();
+            //var random = proDataStructure.GetRandom();
 
-            proDataStructure.Insert(11);
+            //proDataStructure.Insert(11);
+
+            int[] arrMed1 = new int[] { 1,6,8,10,12,13 };
+            int[] arrMed2 = new int[] { 2,3,4,9,11,15 };
+            int median = Array.update1.ArrayProblems.MedianOfTwoSortedArrays1(arrMed1, arrMed2);
 
 
             #endregion  
