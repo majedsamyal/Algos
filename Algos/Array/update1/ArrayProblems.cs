@@ -967,5 +967,34 @@ namespace Algos.Array.update1
 
             return (m1 + m2) / 2;
         }
+
+        public static int MedianOfTwoSortedArrayOdd(int[] firstArr, int first_s, int first_e, int[] secondArr, int second_s, int second_e)
+        {
+            // base case
+            // check if there are two elements left in array
+
+            if ((first_e - first_s) + 1 == 2 && (second_e - second_s) + 1 == 2)
+            {
+                return (Math.Max(firstArr[first_s], secondArr[second_s]) + Math.Min(firstArr[first_e], secondArr[second_e])) / 2;
+            }
+
+            int m1 = 0;
+            int m2 = 0;
+
+            // find median element from both the array
+
+            // find median index
+
+            if (m1 > m2)
+            {
+                //return MedianOfTwoSortedArrayOdd();
+            }
+            else
+            {
+                //return MedianOfTwoSortedArrayOdd();
+            }
+
+            return 0;
+        }
     }
 }
