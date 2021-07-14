@@ -296,7 +296,7 @@ namespace Algos.Tree
 
             int left = HeightOfBinaryTree(root.left);
             int right = HeightOfBinaryTree(root.right);
-            return  1 + Math.Max(left, right);
+            return 1 + Math.Max(left, right);
         }
 
         public static void DeleteBinaryTree(TreeNode root)
@@ -398,6 +398,80 @@ namespace Algos.Tree
             // if we reach here, both binary trees are identical
             return true;
 
+        }
+
+        public static TreeNode Search(TreeNode node, string key)
+        {
+            if (node == null || node.key == key)
+                return node;
+
+            if (Convert.ToInt32(node.key) < Convert.ToInt32(key))
+            {
+                return Search(node.left, key);
+            }
+
+            return Search(node.right, key);
+        }
+
+        public static int MinValueInBST(TreeNode node)
+        {
+            TreeNode current = node;
+
+            while (current.left != null)
+            {
+                current = current.left;
+            }
+
+            return Convert.ToInt32(current.key);
+        }
+
+        public static TreeNode LCABinaryTree(TreeNode root, TreeNode node1, TreeNode node2)
+        {
+            // Base Case
+            if (root == null)
+            {
+                return null;
+            }
+
+            if (root.key == node1.key || root.key == node2.key)
+            {
+                return root;
+            }
+
+            var leftroot = LCABinaryTree(root.left, node1, node2);
+            var rightroot = LCABinaryTree(root.right, node1, node2);
+
+            if (leftroot != null && rightroot != null)
+            {
+                return root;
+            }
+            else if (leftroot != null)
+            {
+                return leftroot;
+            }
+            else
+            {
+                return rightroot;
+            }
+        }
+
+        public static TreeNode LCABinarySearchTree(TreeNode root, TreeNode node1, TreeNode node2)
+        {
+            if (root == null)
+            {
+                return null;
+            }
+
+            if (Convert.ToInt32(node1.key) < Convert.ToInt32(root.key) && Convert.ToInt32(node2.key) < Convert.ToInt32(root.key))
+            {
+                LCABinarySearchTree(root.left, node1, node2);
+            }
+            else if (Convert.ToInt32(node1.key) > Convert.ToInt32(root.key) && Convert.ToInt32(node2.key) > Convert.ToInt32(root.key))
+            {
+                LCABinarySearchTree(root.right, node1, node2);
+            }
+
+            return root;
         }
 
         #endregion
