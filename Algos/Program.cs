@@ -183,6 +183,18 @@ namespace Algos
             //var result = StackProblems.EvaluatePostfixExpression("231*+9-");
             //var reverseString = StackProblems.ReverseStringUsingStack("majed");
             //StackProblems.ReverseWordsInString("Hello World");
+
+            TreeNode t1 = new TreeNode("22");
+            t1.left = new TreeNode("14");
+            t1.right = new TreeNode("25");
+            t1.left.left = new TreeNode("13");            
+            t1.right.left = new TreeNode("23");
+            t1.right.right = new TreeNode("32");
+            t1.right.right.left = new TreeNode("28");
+            t1.right.right.left.left = new TreeNode("26");
+            t1.right.right.right = new TreeNode("40");
+
+            TreeTrack.KLargestElement(t1, 3);
             #endregion
 
             #region Array 
