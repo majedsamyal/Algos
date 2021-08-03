@@ -4,18 +4,18 @@ using System.Text;
 
 namespace Algos.Queue
 {
-    public class LRUCache
+    public class LRUCacheRevision
     {
         private int size = 0;
         private int currentSize = 0;
-        private NodeDoubly front = null;
-        private NodeDoubly rear = null;
-        private Dictionary<int, NodeDoubly> keyValuePairs = null;
+        NodeDoubly rear = null;
+        NodeDoubly front = null;
+        Dictionary<int, NodeDoubly> keyValuePairs = null;
 
-        public LRUCache(int cacheSize)
+        public LRUCacheRevision(int cacheSize)
         {
             size = cacheSize;
-            keyValuePairs = new Dictionary<int, NodeDoubly>(size);
+            keyValuePairs = new Dictionary<int, NodeDoubly>(cacheSize);
         }
 
         public int Get(int key)
@@ -25,9 +25,12 @@ namespace Algos.Queue
                 return -1;
             }
 
+            // Get the value and move node to the front
             NodeDoubly node;
             keyValuePairs.TryGetValue(key, out node);
+            // remove this node from the current position
             RemoveNode(node);
+            // and add this node to the front node
             AddNode(node);
             return node.Value;
         }
@@ -36,7 +39,6 @@ namespace Algos.Queue
         {
             if (keyValuePairs.ContainsKey(key))
             {
-                // when key already exists
                 NodeDoubly node;
                 keyValuePairs.TryGetValue(key, out node);
                 RemoveNode(node);
@@ -46,48 +48,43 @@ namespace Algos.Queue
             {
                 if (currentSize == size)
                 {
-                    RemoveFromRear();
-                    keyValuePairs.Remove(key);
+                    var temp = RemoveFromRear();
+                    keyValuePairs.Remove(temp.Key);
                     currentSize--;
                 }
 
-                NodeDoubly node = new NodeDoubly() { Value = value };
+                NodeDoubly node = new NodeDoubly() { Key = key, Value = value };
                 AddNode(node);
                 keyValuePairs.Add(key, node);
                 currentSize++;
             }
         }
 
-        private void AddNode(NodeDoubly nodeDoubly)
+        private void RemoveNode(NodeDoubly node)
+        {
+            node.Prev.Next = node.Next;
+            node.Next.Prev = node.Prev;
+        }
+
+        private NodeDoubly RemoveFromRear()
+        {
+            var temp = rear;
+            rear.Prev.Next = null;
+            rear = rear.Prev;
+            return temp;
+        }
+        private void AddNode(NodeDoubly node)
         {
             if (front == null)
             {
-                front = rear = nodeDoubly;
+                front = rear = node;
                 return;
             }
-
-            nodeDoubly.Next = front;
-            front.Prev = nodeDoubly;
-            front = nodeDoubly;
+            // add to the front
+            node.Next = front;
+            front.Prev = node;
+            front = node;
         }
 
-        private void RemoveFromRear()
-        {
-            rear.Prev.Next = null;
-            rear = rear.Prev;
-        }
-        private void RemoveNode(NodeDoubly nodeDoubly)
-        {
-            nodeDoubly.Prev.Next = nodeDoubly.Next;
-            nodeDoubly.Next.Prev = nodeDoubly.Prev;
-        }
-    }
-
-    public class NodeDoubly
-    {
-        public NodeDoubly Prev { get; set; }
-        public int Value { get; set; }
-        public int Key { get; set; }
-        public NodeDoubly Next { get; set; }
     }
 }
