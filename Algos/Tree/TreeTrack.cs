@@ -58,5 +58,89 @@ namespace Algos.Tree
 
             ConvertBinaryTreeToDoublyLinkedList(node.right);
         }
+
+        public static void PrintKDistanceNodes(TreeNode node, int k)
+        {
+            if (node == null)
+                return;
+
+            if (k == 0)
+            {
+                Console.WriteLine(node.key);
+                return;
+            }
+
+            PrintKDistanceNodes(node.left, k--);
+            PrintKDistanceNodes(node.right, k--);
+        }
+
+        public static void PrintLeafNodes(TreeNode node)
+        {
+            if (node == null)
+                return;
+
+            PrintLeafNodes(node.left);
+
+            if (node.left == null && node.right == null)
+            {
+                Console.WriteLine(node.key);
+            }
+
+            PrintLeafNodes(node.right);
+        }
+
+        public static void PrintLeftBoundryNodes(TreeNode node)
+        {
+            if (node == null)
+            {
+                return;
+            }
+
+            if (node.left != null)
+            {
+                Console.WriteLine(node.key);
+                PrintLeftBoundryNodes(node.left);
+            }
+            else if (node.right != null)
+            {
+                Console.WriteLine(node.key);
+                PrintLeftBoundryNodes(node.right);
+            }
+        }
+
+        public static void PrintRightBoundryNode(TreeNode node)
+        {
+            if (node == null)
+            {
+                return;
+            }
+
+            if (node.right != null)
+            {
+                PrintRightBoundryNode(node.right);
+                Console.WriteLine(node.key);
+            }
+            else if (node.left != null)
+            {
+                PrintRightBoundryNode(node.left);
+                Console.WriteLine(node.key);
+            }
+        }
+
+        public static void PrintBoundryOfTree(TreeNode node)
+        {
+            if (node == null)
+                return;
+
+            // print root node
+
+            Console.WriteLine(node.key);
+
+            PrintLeftBoundryNodes(node);
+
+            PrintLeafNodes(node);
+
+            PrintRightBoundryNode(node);
+        }
     }
 }

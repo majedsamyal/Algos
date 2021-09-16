@@ -77,7 +77,7 @@ namespace Practice
 
                 // print right column
 
-                for (int i = right; i <= bottom; i++)
+                for (int i = top; i <= bottom; i++)
                 {
                     Console.WriteLine(matrix[i, right] + " ");
                 }
@@ -109,6 +109,70 @@ namespace Practice
 
                 left++;
             }
+        }
+
+        public int MajorityElement(int[] arr)
+        {
+            // {3, 3, 4, 2, 4, 4, 2, 4, 4}
+            // output 4
+
+            int majority = arr[0];
+            int count = 1;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                // if current element is equals to default majority element
+                if (arr[i] == majority)
+                {
+                    count++;
+                }
+                else
+                {
+                    count--;
+                }
+
+                if (count == 0)
+                {
+                    // update the majority element
+                    majority = arr[i];
+                    count++;
+                }
+            }
+
+            return majority;
+        }
+
+        public int MaximumSubArray(int[] arr)
+        {
+            // {-2, -3, 4, -1, -2, 1, 5, -3}
+
+            int currentSum = 0;
+            int maxSum = int.MinValue;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                currentSum = currentSum + arr[i];
+
+                if (currentSum > maxSum)
+                {
+                    maxSum = currentSum;
+                }
+
+                if (currentSum < 0)
+                {
+                    currentSum = 0;
+                }
+            }
+
+            return maxSum;
+        }
+
+        public int LongestNonReaptingSubstringLength(string s)
+        {
+            //S = "geeksforgeeks"
+            //Output: 7
+
+            return 0;
         }
     }
 }
