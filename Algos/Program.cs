@@ -184,17 +184,17 @@ namespace Algos
             //var reverseString = StackProblems.ReverseStringUsingStack("majed");
             //StackProblems.ReverseWordsInString("Hello World");
 
-            TreeNode t1 = new TreeNode("22");
-            t1.left = new TreeNode("14");
-            t1.right = new TreeNode("25");
-            t1.left.left = new TreeNode("13");            
-            t1.right.left = new TreeNode("23");
-            t1.right.right = new TreeNode("32");
-            t1.right.right.left = new TreeNode("28");
-            t1.right.right.left.left = new TreeNode("26");
-            t1.right.right.right = new TreeNode("40");
+            //TreeNode t1 = new TreeNode("22");
+            //t1.left = new TreeNode("14");
+            //t1.right = new TreeNode("25");
+            //t1.left.left = new TreeNode("13");            
+            //t1.right.left = new TreeNode("23");
+            //t1.right.right = new TreeNode("32");
+            //t1.right.right.left = new TreeNode("28");
+            //t1.right.right.left.left = new TreeNode("26");
+            //t1.right.right.right = new TreeNode("40");
 
-            TreeTrack.KLargestElement(t1, 3);
+            //TreeTrack.KLargestElement(t1, 3);
             #endregion
 
             #region Array 
@@ -289,12 +289,12 @@ namespace Algos
 
             //proDataStructure.Insert(11);
 
-            int[] arrMed1 = new int[] { 1,6,8,10,12,13 };
-            int[] arrMed2 = new int[] { 2,3,4,9,11,15 };
-            int median = Array.update1.ArrayProblems.MedianOfTwoSortedArrays1(arrMed1, arrMed2);
+            //int[] arrMed1 = new int[] { 1,6,8,10,12,13 };
+            //int[] arrMed2 = new int[] { 2,3,4,9,11,15 };
+            //int median = Array.update1.ArrayProblems.MedianOfTwoSortedArrays1(arrMed1, arrMed2);
 
 
-            #endregion  
+            #endregion
 
             #region Graph Problems 
 
@@ -336,6 +336,15 @@ namespace Algos
             //StringBuilder builder = new StringBuilder("geeksforgeeks");
             //var removeSpaces = StringProblem.RemoveSpacesBetterApproach(builder);
             //var firstNonRepeativeChar = StringProblem.FirstNonRepeativeCharSignleTraverse(builder);
+            #endregion
+
+            #region Recursion
+
+            SumOfNumber sumOfNumber = new SumOfNumber() { Number = 5 };
+            var sum = sumOfNumber.Get();
+            Console.WriteLine(sum);
+            Console.ReadLine();
+
             #endregion
         }
 

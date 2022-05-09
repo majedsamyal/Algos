@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "cbTUIQpT7H0y7svGufYhW7E9C5hyI9uHbDJJKKvUmggc4Ji1cIhZdRMQPG8LRfNAi6PaZU0wjpIq5HbuYfkFzQ==",
+  "dgSpecHash": "vLGLtQN+SNlGqEgRGItFK5e8tG5j4TT1BeHBMxV06TUFqu00t/Q7FhKGxAgm8WMlwodpruEOpxHPDqz6kB13TQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Majed_Samyal\\source\\repos\\Algos\\Practice\\Practice.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "F:\\source\\repo\\Algos\\Practice\\Practice.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\majed\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.24\\microsoft.netcore.app.host.win-x64.3.1.24.nupkg.sha512",
+    "C:\\Users\\majed\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\majed\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\majed\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
