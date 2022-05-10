@@ -14,6 +14,7 @@ namespace Algos.Recursion
 
         private int Factorial(int num)
         {
+            // base condition
             if (num == 0)
                 return 1;
 

@@ -338,13 +338,27 @@ namespace Algos
             //var firstNonRepeativeChar = StringProblem.FirstNonRepeativeCharSignleTraverse(builder);
             #endregion
 
-            #region Recursion
+            #region Recursion : https://towardsdatascience.com/10-popular-coding-interview-questions-on-recursion-2ddd8aa86039
 
-            SumOfNumber sumOfNumber = new SumOfNumber() { Number = 5 };
-            var sum = sumOfNumber.Get();
-            Console.WriteLine(sum);
+            //SumOfNumber sumOfNumber = new SumOfNumber() { Number = 5 };
+            //var sum = sumOfNumber.Get();
+            //Console.WriteLine(sum);
+            //Console.ReadLine();
+
+            //FactorialOfNumber factorialOfNumber = new FactorialOfNumber { Number = 5 };
+            //var factorial = factorialOfNumber.Get();
+            //Console.WriteLine(factorial);
+            //Console.ReadLine();
+
+            //SumOfNaturalNumber sumOfNaturalNumber = new SumOfNaturalNumber() { Number = 3 };
+            //var sum = sumOfNaturalNumber.Get();
+            //Console.WriteLine(sum);
+            //Console.ReadLine();
+
+            ProductOfNumber productOfNumber = new ProductOfNumber() { Numbers = new List<int>() { 5, 6,2,1,3,1 } };
+            var product = productOfNumber.Get();
+            Console.WriteLine(product);
             Console.ReadLine();
-
             #endregion
         }
 
