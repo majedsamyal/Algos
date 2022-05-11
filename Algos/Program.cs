@@ -355,11 +355,16 @@ namespace Algos
             //Console.WriteLine(sum);
             //Console.ReadLine();
 
-            ProductOfNumber productOfNumber = new ProductOfNumber() { Numbers = new List<int>() { 5, 6,2,1,3,1 } };
-            var product = productOfNumber.Get();
-            Console.WriteLine(product);
-            Console.ReadLine();
+            //ProductOfNumber productOfNumber = new ProductOfNumber() { Numbers = new List<int>() { 5, 6,2,1,3,1 } };
+            //var product = productOfNumber.Get();
+            //Console.WriteLine(product);
+            //Console.ReadLine();
             #endregion
+
+            StringIsPalimdrome stringIsPalimdrome = new StringIsPalimdrome() { InputString = "MOOM" };
+            var isPalindrome = stringIsPalimdrome.Check();
+            Console.WriteLine(isPalindrome);
+            Console.ReadLine();
         }
 
     }
