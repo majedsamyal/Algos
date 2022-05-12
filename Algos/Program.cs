@@ -361,9 +361,22 @@ namespace Algos
             //Console.ReadLine();
             #endregion
 
-            StringIsPalimdrome stringIsPalimdrome = new StringIsPalimdrome() { InputString = "MOOM" };
-            var isPalindrome = stringIsPalimdrome.Check();
-            Console.WriteLine(isPalindrome);
+            //StringIsPalimdrome stringIsPalimdrome = new StringIsPalimdrome() { InputString = "MOOM" };
+            //var isPalindrome = stringIsPalimdrome.Check();
+            //Console.WriteLine(isPalindrome);
+            //Console.ReadLine();
+
+            //PrintNumbersAscending printNumbersAscending = new PrintNumbersAscending() { Number = 10 };
+            //printNumbersAscending.Print();
+            //Console.ReadLine();
+
+            //PrintNumbersDescending printNumbersDescending = new PrintNumbersDescending() { Number = 10 };
+            //printNumbersDescending.Print(0);
+            //Console.ReadLine();
+
+            ReverseString reverseString = new ReverseString();
+            var str = reverseString.Reverse("majed");
+            Console.WriteLine(str);
             Console.ReadLine();
         }
 
