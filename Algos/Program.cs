@@ -374,10 +374,16 @@ namespace Algos
             //printNumbersDescending.Print(0);
             //Console.ReadLine();
 
-            ReverseString reverseString = new ReverseString();
-            var str = reverseString.Reverse("majed");
-            Console.WriteLine(str);
-            Console.ReadLine();
+            //ReverseString reverseString = new ReverseString();
+            //var str = reverseString.Reverse("majed");
+            //Console.WriteLine(str);
+            //Console.ReadLine();
+
+            //PrintLinkedlistInReverseOrder reverseOrder = new PrintLinkedlistInReverseOrder();
+            //reverseOrder.Print();
+
+            ReverseLinkedList reverse = new ReverseLinkedList();
+            var head = reverse.Reverse();
         }
 
     }
