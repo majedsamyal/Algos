@@ -24,17 +24,15 @@ namespace Algos.Recursion
 
         private Node ReverseList(Node head)
         {
-            if (head.Next == null)
+            if (head == null || head.Next == null)
             {
                 return head;
             }   
 
-            var last = ReverseList(head.Next);
-            last.Next = head;
+            var newHead = ReverseList(head.Next);
+            head.Next.Next = head;
             head.Next = null;
-            head = last;
-
-            return last;
+            return newHead;
         }
     }
 }
