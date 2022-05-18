@@ -32,6 +32,7 @@ namespace Algos.Recursion
             var newHead = ReverseList(head.Next);
             head.Next.Next = head;
             head.Next = null;
+
             return newHead;
         }
     }

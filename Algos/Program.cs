@@ -382,8 +382,11 @@ namespace Algos
             //PrintLinkedlistInReverseOrder reverseOrder = new PrintLinkedlistInReverseOrder();
             //reverseOrder.Print();
 
-            ReverseLinkedList reverse = new ReverseLinkedList();
-            var head = reverse.Reverse();
+            //ReverseLinkedList reverse = new ReverseLinkedList();
+            //var head = reverse.Reverse();
+
+            DeleteNodeLinkedList deleteNode = new DeleteNodeLinkedList();
+            var head = deleteNode.Delete(3);
         }
 
     }
