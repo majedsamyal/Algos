@@ -385,8 +385,11 @@ namespace Algos
             //ReverseLinkedList reverse = new ReverseLinkedList();
             //var head = reverse.Reverse();
 
-            DeleteNodeLinkedList deleteNode = new DeleteNodeLinkedList();
-            var head = deleteNode.Delete(3);
+            //DeleteNodeLinkedList deleteNode = new DeleteNodeLinkedList();
+            //var head = deleteNode.Delete(3);
+
+            Concept concept = new Concept();
+            var output = concept.C1(new int[] { 1, 2, 3, 4 }, 4);
         }
 
     }
