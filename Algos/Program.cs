@@ -388,8 +388,15 @@ namespace Algos
             //DeleteNodeLinkedList deleteNode = new DeleteNodeLinkedList();
             //var head = deleteNode.Delete(3);
 
-            Concept concept = new Concept();
-            var output = concept.C1(new int[] { 1, 2, 3, 4 }, 4);
+            //Concept concept = new Concept();
+            //var output = concept.C1(new int[] { 1, 2, 3, 4 }, 4);
+
+            //DeleteLinkedList deleteLinkedList = new DeleteLinkedList();
+            //deleteLinkedList.Delete();
+
+            DecimalToBinary decimalToBinary = new DecimalToBinary();
+            var binary = decimalToBinary.Convert(85452);
+
         }
 
     }
