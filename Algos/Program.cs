@@ -394,8 +394,11 @@ namespace Algos
             //DeleteLinkedList deleteLinkedList = new DeleteLinkedList();
             //deleteLinkedList.Delete();
 
-            DecimalToBinary decimalToBinary = new DecimalToBinary();
-            var binary = decimalToBinary.Convert(85452);
+            //DecimalToBinary decimalToBinary = new DecimalToBinary();
+            //var binary = decimalToBinary.Convert(85452);
+
+            BinarySearch binarySearch = new BinarySearch();
+            var position = binarySearch.Find(new int[] { 4, 6, 8, 9, 10, 15, 20 }, 10);
 
         }
 
