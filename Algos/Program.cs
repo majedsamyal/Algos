@@ -397,8 +397,12 @@ namespace Algos
             //DecimalToBinary decimalToBinary = new DecimalToBinary();
             //var binary = decimalToBinary.Convert(85452);
 
-            BinarySearch binarySearch = new BinarySearch();
-            var position = binarySearch.Find(new int[] { 4, 6, 8, 9, 10, 15, 20 }, 10);
+            //BinarySearch binarySearch = new BinarySearch();
+            //var position = binarySearch.Find(new int[] { 4, 6, 8, 9, 10, 15, 20 }, 10);
+
+            QuickSortAlgo quickSortAlgo = new QuickSortAlgo();
+            var arrToSort = new int[] { 3, 1, 11, 7, 15, 9 };
+            quickSortAlgo.QuickSort(arrToSort, 0, 5);
 
         }
 
